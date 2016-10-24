@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_ui_application">
+    <sys_ui_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <hint/>
+        <name>Dungeons and Dragons</name>
+        <order/>
+        <roles>x_0478_kids_dungeo_dungeons_and_dragons_user</roles>
+        <sys_class_name>sys_ui_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-10-24 16:16:08</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0ea62ca36faa2200432530767b3ee42e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Dungeons and Dragons</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_update_name>sys_ui_application_0ea62ca36faa2200432530767b3ee42e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-10-24 16:16:08</sys_updated_on>
+    </sys_ui_application>
+</record_update>
