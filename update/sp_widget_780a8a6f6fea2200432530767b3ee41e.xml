@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function($scope,spUtil) {
+  /* widget controller */
+  var c = this;
+	
+	
+	
+	//This should update if the record changes in real time
+	spUtil.recordWatch($scope, "x_0478_kids_dungeo_character_card", "active=true", function(name, data) {
+		spUtil.update($scope);
+	});
+	
+	$scope.getCharacterImg = function(charType) {
+		console.log(charType);
+		//need to grab the image and display it.
+		c.data.show_image = charType;
+		c.server.update().then(function(response){
+			c.data.show_image = undefined;
+		});
+	}
+}
+
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>kidds-character-class-picker</id>
+        <internal>false</internal>
+        <link/>
+        <name>Character Class Picker</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	
+	
+	data.char_class = [];
+	//get the different classes v1 = 3
+	
+	var gr = new GlideRecord('sys_choice');
+	gr.addEncodedQuery('name=x_0478_kids_dungeo_character_card^element=u_choice_1^inactive=false');
+	gr.orderBy('name');
+	gr.query();
+	while(gr.next()) {
+		data.char_class.push({'value':gr.getValue('value'),'label':gr.getValue('label')});
+	}
+	
+	data.title = "Character Class";
+	
+	
+	//talk back
+	if (input && input.show_image) {
+		$sp.log(input.show_image);
+		//now we need to grab the images
+	}
+	
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-10-24 23:50:54</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>780a8a6f6fea2200432530767b3ee41e</sys_id>
+        <sys_mod_count>76</sys_mod_count>
+        <sys_name>Character Class Picker</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_update_name>sp_widget_780a8a6f6fea2200432530767b3ee41e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-10-25 02:06:34</sys_updated_on>
+        <template><![CDATA[<div>
+<!-- your widget template -->
+  
+  <select ng-model="selected.class" 
+          ng-options="option.label as option.label for option in c.data.char_class" 
+          ng-change='getCharacterImg(selected.class)'>
+    <option style="display:none" value="">Select A Class</option>
+    
+  </select>
+</div>]]></template>
+    </sp_widget>
+</record_update>

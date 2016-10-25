@@ -2,7 +2,7 @@
 <database>
     <element extends="x_0478_kids_dungeo_dungeons_and_dragons" label="Character Card" max_length="40" name="x_0478_kids_dungeo_character_card" type="collection">
         <element default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
-        <element attributes="edge_encryption_enabled=true" choice="1" label="Character Type" max_length="40" name="u_choice_1" type="string">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Character Class" max_length="40" name="u_choice_1" type="string">
             <choice>
                 <element label="Fighter" value="Fighter"/>
                 <element label="Magic" value="Magic"/>
