@@ -13,11 +13,13 @@
 	});
 	
 	$scope.getCharacterImg = function(charType) {
-		//console.log(charType);
+		console.log(charType);
 		//need to grab the image and display it.
 		c.data.show_image = charType;
+		
 		c.server.update().then(function(response){
 			c.data.show_image = undefined;
+			
 		});
 	}
 	
@@ -25,8 +27,22 @@
 		c.data.get_name = true;
 		c.server.update().then(function(response){
 			c.data.get_name = undefined;
+			
 			$scope.character.name = response.character_name;
+			
 		});
+	}
+	
+	$scope.generateAttrib = function(attrib,charClass) {
+		c.data.generateAttrib = true;
+		c.data.thisAttrib = attrib;
+		c.data.thisAttribClass = charClass;
+		c.server.update().then(function(response){
+			c.data.generateAttrib = undefined;
+			c.data.thisAttrib = undefined;
+			c.data.thisAttribClass = undefined;
+			//$scope.character[attrib] = response.character[attrib];
+		})
 	}
 }
 
@@ -71,20 +87,20 @@
 		}
 		//avg = Math.floor(sum / 3);
 
-		console.log(d);
+		//console.log(d);
 		var dd = d;
 		dd.sort(function(a, b){return b-a});
 		dd.pop();
-		console.log(dd);
+		//console.log(dd);
 		var sum2 = dd.reduce(add, 0);
-		console.log(sum2);
+		//console.log(sum2);
 		avg = Math.floor(sum / dd.length);
 
 		//console.log(sum);
-		console.log(avg);
+		//console.log(avg);
 
-
-		resp.dArray = dd;
+		resp.oRoll = d;
+		resp.roll = dd;
 		resp.sum = sum2;
 		resp.avg = avg;
 
@@ -117,7 +133,7 @@
 		gr.setLimit(1);
 		gr.query();
 		if (gr.next()) {
-			$sp.log(gr.sys_id);
+			//$sp.log(gr.sys_id);
 			var gr2 = new GlideRecord('sys_attachment');
 			gr2.addEncodedQuery('table_sys_id='+gr.sys_id+'^table_nameLIKEZZ_YYx_0478_kids_dungeo_character_image');
 			gr2.query();
@@ -139,7 +155,7 @@
 	gr.orderBy('name');
 	gr.query();
 	while(gr.next()) {
-		data.char_class.push({'value':gr.getValue('sys_id'),'display':gr.getValue('label')});
+		data.char_class.push({'value':gr.getValue('sys_id'),'label':gr.getValue('label')});
 	}
 	
 	data.title = "Character Class";
@@ -147,17 +163,24 @@
 	
 	//talk back
 	if (input && input.show_image) {
-		$sp.log(input.show_image);
+		$sp.log(input.show_image.label);
 		//now we need to grab the images
-		data.char_image = getCharImage(input.show_image);
+		data.char_image = getCharImage(input.show_image.value);
 	}
 	
 	if (input && input.get_name == true) {
-		$sp.log(input.get_name);
+		//$sp.log(input.get_name);
 		var cName = getCharName();
-		$sp.log(cName);
+		//$sp.log(cName);
 		data.character_name = cName;
 	} 
+	
+	if (input && input.generateAttrib) {
+		//value should be one of the attribs
+		$sp.log(input.thisAttrib);
+		$sp.log(input.thisAttribClass);
+		//if thisAttrib == thisAttribClass use mod
+	}
 	
 
 })();]]></script>
@@ -167,7 +190,7 @@
         <sys_created_on>2016-10-24 23:50:54</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>780a8a6f6fea2200432530767b3ee41e</sys_id>
-        <sys_mod_count>133</sys_mod_count>
+        <sys_mod_count>189</sys_mod_count>
         <sys_name>Character Picker</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
@@ -175,29 +198,31 @@
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_widget_780a8a6f6fea2200432530767b3ee41e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-10-26 18:36:17</sys_updated_on>
+        <sys_updated_on>2016-10-26 22:54:27</sys_updated_on>
         <template><![CDATA[<div>
 <!-- your widget template -->
   <form name="character">
-    <div class="form-group">
+    <div class="form-group row">
     	<label>Character Name:</label>
       <input type="text" ng-model="character.name"  readonly="readonly" class="form-control"/>
       <div style="padding-top: 10px;"><button type="button" class="btn btn-info" ng-click="generateName()">Generate</button></div>  
       
     </div>
-    <div class="form-group">
+    <div class="form-group row">
       <label>Character Class:</label>
       <select ng-model="character.class" 
-        ng-options="option.value as option.display for option in c.data.char_class" 
+        ng-options="option.label for option in c.data.char_class track by option.value" 
         ng-change='getCharacterImg(character.class)' class="form-control">
         <option style="display:none" value="">Select A Class</option>
       </select>
       <div style="padding-top: 10px;">
-        <img ng-show="c.data.char_image !== undefined" src="{{c.data.char_image}}" style="float:left; padding-right: 10px;"/>
-        <p>ATTRIBUTES<p>
-      	<p>Strength: <input ng-model="character.strength" readonly="readonly" class="form-control" style="width: 50px;"/></p>
-        <p>Dexterity: <input ng-model="character.dex" readonly="readonly" class="form-control" style="width: 50px;"/></p>
-        <p>Wisdom: <input ng-model="character.wisdom" readonly="readonly" class="form-control" style="width: 50px;"/></p>
+        <fieldset class="form-inline">
+          <img ng-show="c.data.char_image !== undefined" src="{{c.data.char_image}}" style="float:left; margin-right: 10px;margin-bottom: 20px;"/>
+          <p ng-show="c.data.char_image !== undefined">ATTRIBUTES<p>
+          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Strength:</label> <input type="text" ng-model="character.strength" readonly="readonly" class="form-control" style="width: 50px;"/><button type="button" class="btn btn-info" ng-click="generateAttrib('strength',character.class.label)">Roll</button></div>
+          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Dexterity:</label> <input type="text" ng-model="character.dexerity" readonly="readonly" class="form-control" style="width: 50px;"/><button type="button" class="btn btn-info" ng-click="generateAttrib('dexterity',character.class.label)">Roll</button></div>
+          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Wisdom:</label> <input type="text" ng-model="character.wisdom" readonly="readonly" class="form-control" style="width: 50px;"/><button type="button" class="btn btn-info" ng-click="generateAttrib('wisdom',character.class.label)">Roll</button></div>
+        </fieldset>
       </div>
       
     </div>
