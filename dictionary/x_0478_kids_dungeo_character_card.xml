@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
     <element extends="x_0478_kids_dungeo_dungeons_and_dragons" label="Character Card" max_length="40" name="x_0478_kids_dungeo_character_card" type="collection">
+        <element label="Dexterity" max_length="40" name="dexterity" type="integer"/>
         <element default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Strength" max_length="40" name="strength" type="integer"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Character Class" max_length="40" name="u_choice_1" type="string">
             <choice>
                 <element label="Fighter" value="Fighter"/>
@@ -10,5 +12,6 @@
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="Character Name" max_length="40" name="u_string_2" type="string"/>
+        <element label="Wisdom" max_length="40" name="wisdom" type="integer"/>
     </element>
 </database>

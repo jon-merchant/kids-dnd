@@ -5,13 +5,13 @@
             <element>.begin_split</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2016-10-24 17:21:15</sys_created_on>
-            <sys_id>009570e76faa2200432530767b3ee4fb</sys_id>
+            <sys_created_on>2016-10-26 18:03:34</sys_created_on>
+            <sys_id>67629bc46f366200432530767b3ee4a0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_card" sys_domain="global" view="Default view">cbc3b8276faa2200432530767b3ee4ed</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2016-10-24 17:21:15</sys_updated_on>
+            <sys_updated_on>2016-10-26 18:03:34</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
@@ -19,13 +19,13 @@
             <element>number</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2016-10-24 17:21:15</sys_created_on>
-            <sys_id>809570e76faa2200432530767b3ee4fb</sys_id>
+            <sys_created_on>2016-10-26 18:03:34</sys_created_on>
+            <sys_id>e7629bc46f366200432530767b3ee4a0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_card" sys_domain="global" view="Default view">cbc3b8276faa2200432530767b3ee4ed</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2016-10-24 17:21:15</sys_updated_on>
+            <sys_updated_on>2016-10-26 18:03:34</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -33,13 +33,13 @@
             <element>u_string_2</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2016-10-24 17:21:15</sys_created_on>
-            <sys_id>049570e76faa2200432530767b3ee4fb</sys_id>
+            <sys_created_on>2016-10-26 18:03:34</sys_created_on>
+            <sys_id>6b629bc46f366200432530767b3ee4a0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_card" sys_domain="global" view="Default view">cbc3b8276faa2200432530767b3ee4ed</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2016-10-24 17:21:15</sys_updated_on>
+            <sys_updated_on>2016-10-26 18:03:34</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -47,13 +47,13 @@
             <element>.split</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2016-10-24 17:21:15</sys_created_on>
-            <sys_id>849570e76faa2200432530767b3ee4fb</sys_id>
+            <sys_created_on>2016-10-26 18:03:34</sys_created_on>
+            <sys_id>eb629bc46f366200432530767b3ee4a0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_card" sys_domain="global" view="Default view">cbc3b8276faa2200432530767b3ee4ed</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2016-10-24 17:21:15</sys_updated_on>
+            <sys_updated_on>2016-10-26 18:03:34</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -61,27 +61,69 @@
             <element>u_choice_1</element>
             <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2016-10-24 17:21:15</sys_created_on>
-            <sys_id>089570e76faa2200432530767b3ee4fb</sys_id>
+            <sys_created_on>2016-10-26 18:03:34</sys_created_on>
+            <sys_id>6f629bc46f366200432530767b3ee4a0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_card" sys_domain="global" view="Default view">cbc3b8276faa2200432530767b3ee4ed</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2016-10-24 17:21:15</sys_updated_on>
+            <sys_updated_on>2016-10-26 18:03:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>strength</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-10-26 18:03:34</sys_created_on>
+            <sys_id>ef629bc46f366200432530767b3ee4a0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_card" sys_domain="global" view="Default view">cbc3b8276faa2200432530767b3ee4ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-10-26 18:03:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>dexterity</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-10-26 18:03:34</sys_created_on>
+            <sys_id>63629bc46f366200432530767b3ee4a1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_card" sys_domain="global" view="Default view">cbc3b8276faa2200432530767b3ee4ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-10-26 18:03:34</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>wisdom</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-10-26 18:03:34</sys_created_on>
+            <sys_id>e3629bc46f366200432530767b3ee4a1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_card" sys_domain="global" view="Default view">cbc3b8276faa2200432530767b3ee4ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-10-26 18:03:34</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
-            <position>5</position>
+            <position>8</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2016-10-24 17:21:15</sys_created_on>
-            <sys_id>889570e76faa2200432530767b3ee4fb</sys_id>
+            <sys_created_on>2016-10-26 18:03:34</sys_created_on>
+            <sys_id>67629bc46f366200432530767b3ee4a1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_card" sys_domain="global" view="Default view">cbc3b8276faa2200432530767b3ee4ed</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2016-10-24 17:21:15</sys_updated_on>
+            <sys_updated_on>2016-10-26 18:03:34</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>

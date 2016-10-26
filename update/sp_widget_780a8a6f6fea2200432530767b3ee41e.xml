@@ -13,11 +13,19 @@
 	});
 	
 	$scope.getCharacterImg = function(charType) {
-		console.log(charType);
+		//console.log(charType);
 		//need to grab the image and display it.
 		c.data.show_image = charType;
 		c.server.update().then(function(response){
 			c.data.show_image = undefined;
+		});
+	}
+	
+	$scope.generateName = function() {
+		c.data.get_name = true;
+		c.server.update().then(function(response){
+			c.data.get_name = undefined;
+			$scope.character.name = response.character_name;
 		});
 	}
 }
@@ -31,16 +39,74 @@
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>kidds-character-class-picker</id>
+        <id>kidds-character-picker</id>
         <internal>false</internal>
         <link/>
-        <name>Character Class Picker</name>
+        <name>Character Picker</name>
         <option_schema/>
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
+	
+	function add(a, b) {
+    return a + b;
+	}
+	function rollDice(sides,rolls,mods) {
+		var resp = {};
+		var d = [];
+		var sum = 0;
+		var avg = 0;
+		if (typeof mods !== 'undefined') {
+			//the variable is defined
+			mods = 0;
+		}
+		for(i=0;i<rolls;i++) {
+			d[i] = parseInt(Math.floor(Math.random() * sides) + 1);
+			//console.log(d[i]);
+			d[i] = d[i] + mods;
+			sum += d[i];
+
+		}
+		//avg = Math.floor(sum / 3);
+
+		console.log(d);
+		var dd = d;
+		dd.sort(function(a, b){return b-a});
+		dd.pop();
+		console.log(dd);
+		var sum2 = dd.reduce(add, 0);
+		console.log(sum2);
+		avg = Math.floor(sum / dd.length);
+
+		//console.log(sum);
+		console.log(avg);
+
+
+		resp.dArray = dd;
+		resp.sum = sum2;
+		resp.avg = avg;
+
+		return resp;
+	}
+
+//var roll = rollDice(6,4);
+//console.log(roll);
+
+	
+	function getCharName() {
+		
+		var names = [
+    "Ailo","Aerithllorgue","Yasursudru","Tyala","Nirithstidru","Ariria","Idue","Seori","Pharin","Slitherap","Aesty","Phiadainu","Eully","Tyaidaisup","Sirithnu","Athenurgue","Eudain","Rially","Aelophos","Riasurm","Pheusrisuir","Yastynup",
+    "Heoral","Faesurphos","Pheolae","Tyaistyphos","Istyn","Sailanulis","Pheudueru","Aeral","Sadaphos","Yadain","Yarithsurin","Iasrillodil"
+    ];
+  
+		var fName = Math.floor((Math.random() * names.length) + 1);
+		var lName = Math.floor((Math.random() * names.length) + 1);
+		
+		return names[fName]+" "+names[lName];
+	}
 	
 	function getCharImage(charType) {
 		var img = "http://placehold.it/184x284?text=N/A";
@@ -86,6 +152,13 @@
 		data.char_image = getCharImage(input.show_image);
 	}
 	
+	if (input && input.get_name == true) {
+		$sp.log(input.get_name);
+		var cName = getCharName();
+		$sp.log(cName);
+		data.character_name = cName;
+	} 
+	
 
 })();]]></script>
         <servicenow>false</servicenow>
@@ -94,25 +167,41 @@
         <sys_created_on>2016-10-24 23:50:54</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>780a8a6f6fea2200432530767b3ee41e</sys_id>
-        <sys_mod_count>86</sys_mod_count>
-        <sys_name>Character Class Picker</sys_name>
+        <sys_mod_count>133</sys_mod_count>
+        <sys_name>Character Picker</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_widget_780a8a6f6fea2200432530767b3ee41e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-10-25 03:23:30</sys_updated_on>
+        <sys_updated_on>2016-10-26 18:36:17</sys_updated_on>
         <template><![CDATA[<div>
 <!-- your widget template -->
-  
-  <select ng-model="selected.class" 
-          ng-options="option.value as option.display for option in c.data.char_class" 
-          ng-change='getCharacterImg(selected.class)'>
-    <option style="display:none" value="">Select A Class</option>
-    
-  </select>
-  <div><img ng-show="c.data.char_image !== undefined" src="{{c.data.char_image}}"/></div>
+  <form name="character">
+    <div class="form-group">
+    	<label>Character Name:</label>
+      <input type="text" ng-model="character.name"  readonly="readonly" class="form-control"/>
+      <div style="padding-top: 10px;"><button type="button" class="btn btn-info" ng-click="generateName()">Generate</button></div>  
+      
+    </div>
+    <div class="form-group">
+      <label>Character Class:</label>
+      <select ng-model="character.class" 
+        ng-options="option.value as option.display for option in c.data.char_class" 
+        ng-change='getCharacterImg(character.class)' class="form-control">
+        <option style="display:none" value="">Select A Class</option>
+      </select>
+      <div style="padding-top: 10px;">
+        <img ng-show="c.data.char_image !== undefined" src="{{c.data.char_image}}" style="float:left; padding-right: 10px;"/>
+        <p>ATTRIBUTES<p>
+      	<p>Strength: <input ng-model="character.strength" readonly="readonly" class="form-control" style="width: 50px;"/></p>
+        <p>Dexterity: <input ng-model="character.dex" readonly="readonly" class="form-control" style="width: 50px;"/></p>
+        <p>Wisdom: <input ng-model="character.wisdom" readonly="readonly" class="form-control" style="width: 50px;"/></p>
+      </div>
+      
+    </div>
+  </form>
 </div>]]></template>
     </sp_widget>
 </record_update>
