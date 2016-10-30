@@ -38,9 +38,9 @@
 		c.data.thisAttrib = attrib;
 		c.data.thisAttribClass = charClass;
 		c.server.update().then(function(response){
-			c.data.generateAttrib = undefined;
-			c.data.thisAttrib = undefined;
-			c.data.thisAttribClass = undefined;
+			//c.data.generateAttrib = undefined;
+			//c.data.thisAttrib = undefined;
+			//c.data.thisAttribClass = undefined;
 			$scope.character.strength = response.character_fighter_roll;
 			$scope.character.dexterity = response.character_ranged_roll;
 			$scope.character.wisdom = response.character_magic_roll;
@@ -81,14 +81,17 @@
     return a + b;
 	}
 	function rollDice(sides,rolls,mods) {
+		$sp.log("sides: "+sides);
+		$sp.log("rolls: "+rolls);
 		var resp = {};
 		var d = [];
 		var sum = 0;
 		var avg = 0;
-		if (typeof mods !== 'undefined') {
+		if (typeof mods === 'undefined') {
 			//the variable is defined
 			mods = 0;
 		}
+		$sp.log("mods: "+mods);
 		for(i=0;i<rolls;i++) {
 			d[i] = parseInt(Math.floor(Math.random() * sides) + 1);
 			//console.log(d[i]);
@@ -104,6 +107,7 @@
 		dd.pop();
 		//console.log(dd);
 		var sum2 = dd.reduce(add, 0);
+		$sp.log(sum2);
 		//console.log(sum2);
 		avg = Math.floor(sum / dd.length);
 
@@ -223,9 +227,7 @@
 			if (input.thisAttribClass == 'Fighter') {
 				roll = rollDice(6,4,10);
 			} else {
-				$sp.log("should hit");
 				roll = rollDice(6,4);
-				$sp.log(roll.sum);
 			}
 			data.character_fighter_roll = roll.sum;
 		}
@@ -248,7 +250,7 @@
         <sys_created_on>2016-10-24 23:50:54</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>780a8a6f6fea2200432530767b3ee41e</sys_id>
-        <sys_mod_count>226</sys_mod_count>
+        <sys_mod_count>234</sys_mod_count>
         <sys_name>Character Picker</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
@@ -256,7 +258,7 @@
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_widget_780a8a6f6fea2200432530767b3ee41e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-10-30 03:55:40</sys_updated_on>
+        <sys_updated_on>2016-10-30 16:28:29</sys_updated_on>
         <template><![CDATA[<div>
 <!-- your widget template -->
   <form name="character">
@@ -277,9 +279,9 @@
         <fieldset class="form-inline">
           <img ng-show="c.data.char_image !== undefined" src="{{c.data.char_image}}" style="float:left; margin-right: 10px;margin-bottom: 20px;"/>
           <p ng-show="c.data.char_image !== undefined">ATTRIBUTES<p>
-          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Strength:</label> <input type="text" ng-model="character.strength" readonly="readonly" class="form-control" style="width: 50px;"/><button type="button" class="btn btn-info" ng-click="generateAttrib('strength',character.class.label)">Roll</button></div>
-          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Dexterity:</label> <input type="text" ng-model="character.dexerity" readonly="readonly" class="form-control" style="width: 50px;"/><button type="button" class="btn btn-info" ng-click="generateAttrib('dexterity',character.class.label)">Roll</button></div>
-          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Wisdom:</label> <input type="text" ng-model="character.wisdom" readonly="readonly" class="form-control" style="width: 50px;"/><button type="button" class="btn btn-info" ng-click="generateAttrib('wisdom',character.class.label)">Roll</button></div>
+          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Strength:</label> <input type="text" ng-model="character.strength" readonly="readonly" class="form-control" style="width: 50px;" value="0"/><button type="button" class="btn btn-info" ng-click="generateAttrib('strength',character.class.label)">Roll</button></div>
+          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Dexterity:</label> <input type="text" ng-model="character.dexterity" readonly="readonly" class="form-control" style="width: 50px;" value="0"/><button type="button" class="btn btn-info" ng-click="generateAttrib('dexterity',character.class.label)">Roll</button></div>
+          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Wisdom:</label> <input type="text" ng-model="character.wisdom" readonly="readonly" class="form-control" style="width: 50px;" value="0"/><button type="button" class="btn btn-info" ng-click="generateAttrib('wisdom',character.class.label)">Roll</button></div>
         </fieldset>
       </div>
       
