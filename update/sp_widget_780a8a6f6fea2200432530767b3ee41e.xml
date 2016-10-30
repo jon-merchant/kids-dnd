@@ -13,7 +13,7 @@
 	});
 	
 	$scope.getCharacterImg = function(charType) {
-		console.log(charType);
+		//console.log(charType);
 		//need to grab the image and display it.
 		c.data.show_image = charType;
 		
@@ -41,6 +41,9 @@
 			c.data.generateAttrib = undefined;
 			c.data.thisAttrib = undefined;
 			c.data.thisAttribClass = undefined;
+			$scope.character.strength = response.character_fighter_roll;
+			$scope.character.dexterity = response.character_ranged_roll;
+			$scope.character.wisdom = response.character_magic_roll;
 			//$scope.character[attrib] = response.character[attrib];
 		})
 	}
@@ -65,6 +68,14 @@
         <script><![CDATA[(function() {
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
+	
+	function checkUndefinded(vari) {
+		if (typeof vari != 'undefined') {
+			vari = "";
+		}
+		
+		return vari;
+	}
 	
 	function add(a, b) {
     return a + b;
@@ -109,7 +120,24 @@
 
 //var roll = rollDice(6,4);
 //console.log(roll);
-
+	
+	function checkAttrib(attrib,charType) {
+		var mods = {};
+		var lowerChar = charType.toLowerCase();
+		
+		if (lowerChar == "magic" && attrib == "wisdom") {
+			mods.magic = parseInt(10);
+		}
+		if (lowerChar == "fighter" && attrib == "strength") {
+			mods.fighter = parseInt(10);
+		}
+		if (lowerChar == "ranged" && attrib == "dexterity"){
+			mods.ranged = parseInt(10);
+		}
+				
+		return mods
+				
+	}
 	
 	function getCharName() {
 		
@@ -179,7 +207,37 @@
 		//value should be one of the attribs
 		$sp.log(input.thisAttrib);
 		$sp.log(input.thisAttribClass);
-		//if thisAttrib == thisAttribClass use mod
+		
+		//need to check which mod to add too
+		var roll;
+		if (input.thisAttrib == 'wisdom') {
+			if (input.thisAttribClass == 'Magic') {
+				//magic gets the mod
+				roll = rollDice(6,4,10);
+			} else {
+				roll = rollDice(6,4);
+			}
+			data.character_magic_roll = roll.sum;			
+		}
+		if (input.thisAttrib == 'strength') {
+			if (input.thisAttribClass == 'Fighter') {
+				roll = rollDice(6,4,10);
+			} else {
+				$sp.log("should hit");
+				roll = rollDice(6,4);
+				$sp.log(roll.sum);
+			}
+			data.character_fighter_roll = roll.sum;
+		}
+		if (input.thisAttrib == 'dexterity') {
+			if (input.thisAttribClass == 'Ranged') {
+				roll = rollDice(6,4,10);
+			} else {
+				roll = rollDice(6,4);
+			}
+			data.character_ranged_roll = roll.sum;
+		}
+		
 	}
 	
 
@@ -190,7 +248,7 @@
         <sys_created_on>2016-10-24 23:50:54</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>780a8a6f6fea2200432530767b3ee41e</sys_id>
-        <sys_mod_count>189</sys_mod_count>
+        <sys_mod_count>226</sys_mod_count>
         <sys_name>Character Picker</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
@@ -198,7 +256,7 @@
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_widget_780a8a6f6fea2200432530767b3ee41e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-10-26 22:54:27</sys_updated_on>
+        <sys_updated_on>2016-10-30 03:55:40</sys_updated_on>
         <template><![CDATA[<div>
 <!-- your widget template -->
   <form name="character">
