@@ -5,11 +5,11 @@
         <hint/>
         <name>Dungeons and Dragons</name>
         <order/>
-        <roles>x_0478_kids_dungeo_dungeons_and_dragons_user</roles>
+        <roles>x_0478_kids_dungeo_dungeons_and_dragons_</roles>
         <sys_class_name>sys_ui_application</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-10-24 16:16:08</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0ea62ca36faa2200432530767b3ee42e</sys_id>

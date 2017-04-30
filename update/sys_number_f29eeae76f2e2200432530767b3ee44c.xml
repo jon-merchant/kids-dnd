@@ -8,7 +8,7 @@
         <sys_class_name>sys_number</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-10-25 02:10:06</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>f29eeae76f2e2200432530767b3ee44c</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>CHARIMG</sys_name>

@@ -8,7 +8,7 @@
         <sys_class_name>sys_number</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-10-24 17:13:03</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>ffa3f4a76faa2200432530767b3ee497</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>DNDCC</sys_name>

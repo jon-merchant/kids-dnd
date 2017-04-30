@@ -15,6 +15,9 @@
 	$scope.getCharacterImg = function(charType) {
 		//console.log(charType);
 		//need to grab the image and display it.
+		$scope.character.strength = '';
+		$scope.character.wisdom = '';
+		$scope.character.dexterity = '';
 		c.data.show_image = charType;
 		
 		c.server.update().then(function(response){
@@ -41,9 +44,15 @@
 			//c.data.generateAttrib = undefined;
 			//c.data.thisAttrib = undefined;
 			//c.data.thisAttribClass = undefined;
-			$scope.character.strength = response.character_fighter_roll;
-			$scope.character.dexterity = response.character_ranged_roll;
-			$scope.character.wisdom = response.character_magic_roll;
+			if (attrib == 'strength') {
+				$scope.character.strength = response.character_fighter_roll;
+			}
+			if (attrib == 'dexterity') {
+				$scope.character.dexterity = response.character_ranged_roll;
+			}
+			if (attrib == 'wisdom') {
+				$scope.character.wisdom = response.character_magic_roll;
+			}
 			//$scope.character[attrib] = response.character[attrib];
 		})
 	}
@@ -51,7 +60,11 @@
 
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>.step-class-letter {
+  color: #fff;
+  margin-top: -2px;
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -157,7 +170,7 @@
 	}
 	
 	function getCharImage(charType) {
-		var img = "http://placehold.it/184x284?text=N/A";
+		var img = "https://placehold.it/184x284?text=N/A";
 		//https://dev16833.service-now.com/80723a2b6f2e2200432530767b3ee438.iix
 		var gr = new GlideRecord('x_0478_kids_dungeo_character_image');
 		gr.addEncodedQuery('character_class='+charType+'^active=true');
@@ -250,7 +263,7 @@
         <sys_created_on>2016-10-24 23:50:54</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>780a8a6f6fea2200432530767b3ee41e</sys_id>
-        <sys_mod_count>234</sys_mod_count>
+        <sys_mod_count>255</sys_mod_count>
         <sys_name>Character Picker</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
@@ -258,18 +271,20 @@
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_widget_780a8a6f6fea2200432530767b3ee41e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-10-30 16:28:29</sys_updated_on>
+        <sys_updated_on>2017-04-30 19:35:19</sys_updated_on>
         <template><![CDATA[<div>
 <!-- your widget template -->
   <form name="character">
     <div class="form-group row">
-    	<label>Character Name:</label>
+      
+    	<label>>1 Character Name:</label>
       <input type="text" ng-model="character.name"  readonly="readonly" class="form-control"/>
       <div style="padding-top: 10px;"><button type="button" class="btn btn-info" ng-click="generateName()">Generate</button></div>  
       
     </div>
-    <div class="form-group row">
-      <label>Character Class:</label>
+    <div class="form-group row" ng-show="character.name">
+      
+      <label>>2 Character Class:</label>
       <select ng-model="character.class" 
         ng-options="option.label for option in c.data.char_class track by option.value" 
         ng-change='getCharacterImg(character.class)' class="form-control">
@@ -285,6 +300,9 @@
         </fieldset>
       </div>
       
+    </div>
+    <div class="form-group row" ng-show="character.stength != '' && character.wisdom != '' && character.dexterity != ''">
+      <lable>>3 Items</lable>
     </div>
   </form>
 </div>]]></template>
