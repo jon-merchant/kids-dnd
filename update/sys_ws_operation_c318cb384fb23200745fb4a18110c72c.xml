@@ -11,6 +11,11 @@
         <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
 
     // implement resource here
+	
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	
 	//Need to go find items for type and level 1 (this is just a first run)
 	var pathParams = request.pathParams;
 	var cType = pathParams.type;
@@ -18,17 +23,27 @@
 	var items = [];
 	var body = {};
 	
+	
 	var itemGR = new GlideRecord('x_0478_kids_dungeo_character_items');
-	itemGR.addEncodedQuery('character_type='+cType);
+	itemGR.addEncodedQuery('character_type='+cType+'^minimum_level=1');
 	itemGR.query();
 	while(itemGR.next()) {
 		var id = itemGR.getUniqueValue();
 		var n = null;
 		n = itemGR.item_name.toString();
-		items.push({sys_id:id,name:n});
+		var t = null;
+		t = itemGR.item_type.toString();
+		var mod = null;
+		mod = {attribute_mod:itemGR.attribute_modifier,mod_value:itemGR.modifier_value,minus_attrib_mod:itemGR.attribute_minus_modifier,minus_mod_value:itemGR.minus_modifier_value};
+		items.push({sys_id:id,name:n,type:t,mod:mod});
 	}
 	
-	body.items = items;
+	var itemCount = items.length;
+	var rIndex = getRandomInt(0,itemCount);
+	
+	body.itemCount = itemCount;
+	body.rIndex = rIndex;
+	body.items = items[rIndex];
 	
 	response.setBody(body);
 
@@ -46,7 +61,7 @@
         <sys_created_on>2017-05-15 21:25:14</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>c318cb384fb23200745fb4a18110c72c</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>randomItems</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
@@ -54,7 +69,7 @@
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sys_ws_operation_c318cb384fb23200745fb4a18110c72c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-15 22:22:57</sys_updated_on>
+        <sys_updated_on>2017-05-15 23:58:18</sys_updated_on>
         <web_service_definition display_value="KIDDS">d7d70b384fb23200745fb4a18110c7b6</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>
