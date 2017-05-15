@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="character_class" table="x_0478_kids_dungeo_character_type" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>character_class</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>-- New choice --</label>
+            <language>en</language>
+            <name>x_0478_kids_dungeo_character_type</name>
+            <sequence/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-15 20:11:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fb377afc4f723200745fb4a18110c7d0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-15 20:11:25</sys_updated_on>
+            <value>-- New choice --</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>character_class</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Fighter</label>
+            <language>en</language>
+            <name>x_0478_kids_dungeo_character_type</name>
+            <sequence>100</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-15 20:11:42</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ac47bafc4f723200745fb4a18110c73c</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-15 20:11:52</sys_updated_on>
+            <value>Fighter</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>character_class</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Magic</label>
+            <language>en</language>
+            <name>x_0478_kids_dungeo_character_type</name>
+            <sequence>200</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-15 20:11:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1457fafc4f723200745fb4a18110c706</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-15 20:12:04</sys_updated_on>
+            <value>Magic</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>character_class</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Ranged</label>
+            <language>en</language>
+            <name>x_0478_kids_dungeo_character_type</name>
+            <sequence>300</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-15 20:12:14</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>bf577efc4f723200745fb4a18110c71c</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-15 20:12:24</sys_updated_on>
+            <value>Ranged</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>character_class</element>
+            <name>x_0478_kids_dungeo_character_type</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-15 20:11:25</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>77377afc4f723200745fb4a18110c7d1</sys_id>
+            <sys_mod_count>10</sys_mod_count>
+            <sys_name>character_class</sys_name>
+            <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+            <sys_update_name>sys_choice_x_0478_kids_dungeo_character_type_character_class</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-15 20:12:24</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

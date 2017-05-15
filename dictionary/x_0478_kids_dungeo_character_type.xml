@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="x_0478_kids_dungeo_dungeons_and_dragons" label="Character Type" max_length="40" name="x_0478_kids_dungeo_character_type" type="collection">
+        <element label="Active" max_length="40" name="active" type="boolean"/>
+        <element attributes="readable=true" choice="1" display="true" label="Character Class" max_length="40" name="character_class" type="choice">
+            <choice>
+                <element label="-- New choice --" value="-- New choice --"/>
+                <element label="Fighter" sequence="100" value="Fighter"/>
+                <element label="Magic" sequence="200" value="Magic"/>
+                <element label="Ranged" sequence="300" value="Ranged"/>
+            </choice>
+        </element>
+    </element>
+</database>

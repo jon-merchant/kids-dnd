@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="potion_type" table="x_0478_kids_dungeo_character_items" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>potion_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Dexterity</label>
+            <language>en</language>
+            <name>x_0478_kids_dungeo_character_items</name>
+            <sequence/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-15 20:58:15</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a4e1cb744fb23200745fb4a18110c7d0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-15 20:58:15</sys_updated_on>
+            <value>Dexterity</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>potion_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Health</label>
+            <language>en</language>
+            <name>x_0478_kids_dungeo_character_items</name>
+            <sequence/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-15 20:57:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8fb1cb744fb23200745fb4a18110c78f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-15 20:57:31</sys_updated_on>
+            <value>Health</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>potion_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Mana</label>
+            <language>en</language>
+            <name>x_0478_kids_dungeo_character_items</name>
+            <sequence/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-15 20:57:50</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>48d18b744fb23200745fb4a18110c732</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-15 20:57:50</sys_updated_on>
+            <value>Mana</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>potion_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Strength</label>
+            <language>en</language>
+            <name>x_0478_kids_dungeo_character_items</name>
+            <sequence/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-15 20:58:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fef18b744fb23200745fb4a18110c785</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-15 20:58:29</sys_updated_on>
+            <value>Strength</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>potion_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Wisdom</label>
+            <language>en</language>
+            <name>x_0478_kids_dungeo_character_items</name>
+            <sequence/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-15 20:58:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>82020b744fb23200745fb4a18110c7ee</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-15 20:58:40</sys_updated_on>
+            <value>Wisdom</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>potion_type</element>
+            <name>x_0478_kids_dungeo_character_items</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-15 20:57:31</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>cbc187744fb23200745fb4a18110c797</sys_id>
+            <sys_mod_count>5</sys_mod_count>
+            <sys_name>potion_type</sys_name>
+            <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+            <sys_update_name>sys_choice_x_0478_kids_dungeo_character_items_potion_type</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-15 20:58:40</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

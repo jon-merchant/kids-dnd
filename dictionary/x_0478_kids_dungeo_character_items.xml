@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="x_0478_kids_dungeo_dungeons_and_dragons" label="Character Items" max_length="40" name="x_0478_kids_dungeo_character_items" type="collection">
+        <element label="Attribute Minus Modifier" max_length="4000" name="attribute_minus_modifier" type="glide_list"/>
+        <element choice="1" label="Attribute Add Modifier" max_length="40" name="attribute_modifier" type="glide_list">
+            <choice>
+                <element label="Dexterity" value="Dexterity"/>
+                <element label="Strength" value="Strength"/>
+                <element label="Wisdom" value="Wisdom"/>
+            </choice>
+        </element>
+        <element label="Character Type" max_length="32" name="character_type" reference="x_0478_kids_dungeo_character_type" type="reference"/>
+        <element label="Type Modifier" max_length="32" name="item_modifier" reference="x_0478_kids_dungeo_character_type" type="reference"/>
+        <element label="Item Name" max_length="40" name="item_name" type="string"/>
+        <element choice="1" label="Item Type" max_length="40" name="item_type" type="choice">
+            <choice>
+                <element label="Armor" value="Armor"/>
+                <element label="Potion" value="Potion"/>
+                <element label="Weapon" value="Weapon"/>
+            </choice>
+        </element>
+        <element label="Minimum Level" max_length="40" name="minimum_level" type="integer"/>
+        <element label="Minus Modifier Value" max_length="40" name="minus_modifier_value" type="integer"/>
+        <element label="Add Modifier Value" max_length="40" name="modifier_value" type="integer"/>
+        <element label="Potion Modifier" max_length="40" name="potion_modifier" type="integer"/>
+        <element choice="1" label="Potion Type" max_length="40" name="potion_type" type="choice">
+            <choice>
+                <element label="Dexterity" value="Dexterity"/>
+                <element label="Health" value="Health"/>
+                <element label="Mana" value="Mana"/>
+                <element label="Strength" value="Strength"/>
+                <element label="Wisdom" value="Wisdom"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="item_modifier"/>
+        </index>
+        <index name="index2">
+            <element name="character_type"/>
+        </index>
+    </element>
+</database>

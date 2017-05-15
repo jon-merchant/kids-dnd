@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
-        <client_script><![CDATA[function($scope,spUtil) {
+        <client_script><![CDATA[function($scope,spUtil,$http) {
   /* widget controller */
   var c = this;
   $scope.character = {};
@@ -67,15 +67,30 @@
 			return false;
 		}
 		if (step == 3) {
-			console.log("SHOW STEP Name",$scope.character.name);
+			//console.log("SHOW STEP Name",$scope.character.name);
 			if (typeof $scope.character.name !== 'undefined' && $scope.character.name != '') {
-				console.log("SHOW STEP Strength",$scope.character.strength);
+				//console.log("SHOW STEP Strength",$scope.character.strength);
 				if ((typeof $scope.character.strength !== 'undefined' && $scope.character.strength != '') && (typeof $scope.character.wisdom !== 'undefined' && $scope.character.wisdom != '') && (typeof $scope.character.dexterity !== 'undefined' && $scope.character.dexterity != '')) {
 					return true;
 				}
 			}
 			return false;
 		}
+	}
+
+	$scope.randomItems = function(type) {
+		console.log("TYPE",type);
+		$http({
+			method:'GET',
+			headers: {
+				"Content-Type": "application/json;charset=UTF-8"
+			},
+			url: '/api/x_0478_kids_dungeo/kidds/randomItems/'+type.value.toString()+'/1'
+		}).success(function(response) {
+			console.log(response);
+		}).error(function(error) {
+			console.log(error);
+		})
 	}
 }
 
@@ -216,12 +231,12 @@
 	data.char_class = [];
 	//get the different classes v1 = 3
 	
-	var gr = new GlideRecord('sys_choice');
-	gr.addEncodedQuery('name=x_0478_kids_dungeo_character_card^element=u_choice_1^inactive=false');
-	gr.orderBy('name');
+	var gr = new GlideRecord('x_0478_kids_dungeo_character_type');
+	gr.addEncodedQuery('active=true');
+	gr.orderBy('character_class');
 	gr.query();
 	while(gr.next()) {
-		data.char_class.push({'value':gr.getValue('sys_id'),'label':gr.getValue('label')});
+		data.char_class.push({'value':gr.getValue('sys_id'),'label':gr.getValue('character_class')});
 	}
 	
 	data.title = "Character Class";
@@ -284,7 +299,7 @@
         <sys_created_on>2016-10-24 23:50:54</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>780a8a6f6fea2200432530767b3ee41e</sys_id>
-        <sys_mod_count>270</sys_mod_count>
+        <sys_mod_count>279</sys_mod_count>
         <sys_name>Character Picker</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
@@ -292,7 +307,7 @@
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_widget_780a8a6f6fea2200432530767b3ee41e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-15 20:03:26</sys_updated_on>
+        <sys_updated_on>2017-05-15 22:11:07</sys_updated_on>
         <template><![CDATA[<div class="container">
 <!-- your widget template -->
   <form name="character">
@@ -324,6 +339,7 @@
     </div>
     <div class="form-group row" ng-show="showStep(3)">
       <label>>3 Items</label>
+      <button class="btn btn-info" ng-click="randomItems(character.class)">Roll</button>
     </div>
   </form>
 </div>]]></template>
