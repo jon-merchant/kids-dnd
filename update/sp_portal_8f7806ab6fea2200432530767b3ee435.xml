@@ -19,7 +19,7 @@
         <sys_class_name>sp_portal</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-10-24 23:24:13</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>8f7806ab6fea2200432530767b3ee435</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>Kidds Dungeons &amp; Dragons</sys_name>

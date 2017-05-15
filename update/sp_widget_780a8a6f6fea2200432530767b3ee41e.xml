@@ -4,7 +4,7 @@
         <client_script><![CDATA[function($scope,spUtil) {
   /* widget controller */
   var c = this;
-	
+  $scope.character = {};
 	
 	
 	//This should update if the record changes in real time
@@ -55,6 +55,27 @@
 			}
 			//$scope.character[attrib] = response.character[attrib];
 		})
+	}
+
+
+	$scope.showStep = function(step) {
+		if (step == 2) {
+			//this is for character.name
+			if ($scope.character.name) {
+				return true;
+			}
+			return false;
+		}
+		if (step == 3) {
+			console.log("SHOW STEP Name",$scope.character.name);
+			if (typeof $scope.character.name !== 'undefined' && $scope.character.name != '') {
+				console.log("SHOW STEP Strength",$scope.character.strength);
+				if ((typeof $scope.character.strength !== 'undefined' && $scope.character.strength != '') && (typeof $scope.character.wisdom !== 'undefined' && $scope.character.wisdom != '')) {
+					return true;
+				}
+			}
+			return false;
+		}
 	}
 }
 
@@ -263,7 +284,7 @@
         <sys_created_on>2016-10-24 23:50:54</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>780a8a6f6fea2200432530767b3ee41e</sys_id>
-        <sys_mod_count>255</sys_mod_count>
+        <sys_mod_count>268</sys_mod_count>
         <sys_name>Character Picker</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
@@ -271,8 +292,8 @@
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_widget_780a8a6f6fea2200432530767b3ee41e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-04-30 19:35:19</sys_updated_on>
-        <template><![CDATA[<div>
+        <sys_updated_on>2017-05-15 19:57:00</sys_updated_on>
+        <template><![CDATA[<div class="container">
 <!-- your widget template -->
   <form name="character">
     <div class="form-group row">
@@ -282,7 +303,7 @@
       <div style="padding-top: 10px;"><button type="button" class="btn btn-info" ng-click="generateName()">Generate</button></div>  
       
     </div>
-    <div class="form-group row" ng-show="character.name">
+    <div class="form-group row" ng-show="showStep(2)">
       
       <label>>2 Character Class:</label>
       <select ng-model="character.class" 
@@ -301,7 +322,7 @@
       </div>
       
     </div>
-    <div class="form-group row" ng-show="character.stength != '' && character.wisdom != '' && character.dexterity != ''">
+    <div class="form-group row" ng-show="showStep(3)">
       <lable>>3 Items</lable>
     </div>
   </form>
