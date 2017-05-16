@@ -6,71 +6,61 @@
         <consumes_customized>false</consumes_customized>
         <default_operation_uri/>
         <enforce_acl/>
-        <http_method>GET</http_method>
-        <name>randomItems</name>
+        <http_method>POST</http_method>
+        <name>saveCharacter</name>
         <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
 
     // implement resource here
-	
-	function getRandomInt(min, max) {
-		return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
-	
-	//Need to go find items for type and level 1 (this is just a first run)
 	var pathParams = request.pathParams;
-	var cType = pathParams.type;
-	var level = pathParams.level;
+	var character = JSON.parse(pathParams.character);
 	
-	var items = [];
 	var body = {};
+	body.character = character;
 	
-	
-	var itemGR = new GlideRecord('x_0478_kids_dungeo_character_items');
-	itemGR.addEncodedQuery('character_type='+cType+'^minimum_level='+level);
-	itemGR.query();
-	while(itemGR.next()) {
-		var id = itemGR.getUniqueValue();
-		var n = null;
-		n = itemGR.item_name.toString();
-		var t = null;
-		t = itemGR.item_type.toString();
-		var mod = null;
-		mod = {attribute_mod:itemGR.attribute_modifier,mod_value:itemGR.modifier_value,minus_attrib_mod:itemGR.attribute_minus_modifier,minus_mod_value:itemGR.minus_modifier_value};
-		items.push({sys_id:id,name:n,type:t,mod:mod});
+	//save character
+	var ins = new GlideRecord('x_0478_kids_dungeo_character_card');
+	ins.initialize();
+	ins.dexterity = character.attributes.dexterity;
+	ins.strength = character.attributes.strength;
+	ins.wisdom = character.attributes.wisdom;
+	if (character.item) {
+		if (character.item.Weapon) {
+			ins.weapons = character.item.Weapon.sys_id;
+		}
+		if (character.item.Armor) {
+			ins.armors = character.item.Armor.sys_id;
+		}
+		
 	}
-	
-	var itemCount = items.length;
-	var rIndex = getRandomInt(0,(itemCount-1));
-	
-	body.itemCount = itemCount;
-	body.rIndex = rIndex;
-	body.items = items[rIndex];
+	ins.character_name = character.name;
+	ins.character_type = character.type.value;
+	body.inserted = ins.insert();
 	
 	response.setBody(body);
 
 })(request, response);]]></operation_script>
-        <operation_uri>/api/x_0478_kids_dungeo/kidds/randomItems/{type}/{level}</operation_uri>
+        <operation_uri>/api/x_0478_kids_dungeo/kidds/saveCharacter/{character}</operation_uri>
         <produces>application/json,application/xml,text/xml</produces>
         <produces_customized>false</produces_customized>
-        <relative_path>/randomItems/{type}/{level}</relative_path>
+        <relative_path>/saveCharacter/{character}</relative_path>
         <request_example/>
         <requires_acl_authorization>false</requires_acl_authorization>
         <requires_authentication>true</requires_authentication>
         <short_description/>
         <sys_class_name>sys_ws_operation</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-05-15 21:25:14</sys_created_on>
+        <sys_created_on>2017-05-16 17:59:23</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
-        <sys_id>c318cb384fb23200745fb4a18110c72c</sys_id>
-        <sys_mod_count>14</sys_mod_count>
-        <sys_name>randomItems</sys_name>
+        <sys_id>d970a3414f323200745fb4a18110c799</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>saveCharacter</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
-        <sys_update_name>sys_ws_operation_c318cb384fb23200745fb4a18110c72c</sys_update_name>
+        <sys_update_name>sys_ws_operation_d970a3414f323200745fb4a18110c799</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-16 16:47:44</sys_updated_on>
+        <sys_updated_on>2017-05-16 21:04:50</sys_updated_on>
         <web_service_definition display_value="KIDDS">d7d70b384fb23200745fb4a18110c7b6</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

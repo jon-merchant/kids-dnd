@@ -183,6 +183,76 @@
             <sys_user/>
             <type/>
         </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>weapons</element>
+            <position>13</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-16 19:19:54</sys_created_on>
+            <sys_id>7e05bfc54f323200745fb4a18110c767</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_card" sys_domain="global" view="Default view">cbc3b8276faa2200432530767b3ee4ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-16 19:19:54</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>armors</element>
+            <position>14</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-16 19:19:54</sys_created_on>
+            <sys_id>030577014f723200745fb4a18110c7da</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_card" sys_domain="global" view="Default view">cbc3b8276faa2200432530767b3ee4ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-16 19:19:54</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>potions</element>
+            <position>15</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-16 19:19:54</sys_created_on>
+            <sys_id>0b0577014f723200745fb4a18110c7e3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_card" sys_domain="global" view="Default view">cbc3b8276faa2200432530767b3ee4ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-16 19:19:54</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>character_name</element>
+            <position>16</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-16 21:02:13</sys_created_on>
+            <sys_id>a57c00d94f723200745fb4a18110c7d8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_card" sys_domain="global" view="Default view">cbc3b8276faa2200432530767b3ee4ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-16 21:02:13</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>character_type</element>
+            <position>17</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-16 21:02:13</sys_created_on>
+            <sys_id>7d7c00d94f723200745fb4a18110c7e2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_card" sys_domain="global" view="Default view">cbc3b8276faa2200432530767b3ee4ed</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-16 21:02:13</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>
             <header>false</header>
@@ -195,7 +265,7 @@
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>cbc3b8276faa2200432530767b3ee4ed</sys_id>
-            <sys_mod_count>4</sys_mod_count>
+            <sys_mod_count>9</sys_mod_count>
             <sys_name>x_0478_kids_dungeo_character_card</sys_name>
             <sys_overrides/>
             <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
@@ -204,7 +274,7 @@
             <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
             <sys_update_name>sys_ui_section_cbc3b8276faa2200432530767b3ee4ed</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 21:30:02</sys_updated_on>
+            <sys_updated_on>2017-05-16 21:02:13</sys_updated_on>
             <sys_user/>
             <title>true</title>
             <view display_value="Default view" name="NULL">Default view</view>

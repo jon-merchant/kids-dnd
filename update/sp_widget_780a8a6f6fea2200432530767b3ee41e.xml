@@ -1,100 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
-        <client_script><![CDATA[function($scope,spUtil,$http) {
-  /* widget controller */
-  var c = this;
-  $scope.character = {};
-	
-	
-	//This should update if the record changes in real time
-	spUtil.recordWatch($scope, "x_0478_kids_dungeo_character_card", "active=true", function(name, data) {
-		spUtil.update($scope);
-	});
-	
-	$scope.getCharacterImg = function(charType) {
-		//console.log(charType);
-		//need to grab the image and display it.
-		$scope.character.strength = '';
-		$scope.character.wisdom = '';
-		$scope.character.dexterity = '';
-		c.data.show_image = charType;
-		
-		c.server.update().then(function(response){
-			c.data.show_image = undefined;
-			
-		});
-	}
-	
-	$scope.generateName = function() {
-		c.data.get_name = true;
-		c.server.update().then(function(response){
-			c.data.get_name = undefined;
-			
-			$scope.character.name = response.character_name;
-			
-		});
-	}
-	
-	$scope.generateAttrib = function(attrib,charClass) {
-		c.data.generateAttrib = true;
-		c.data.thisAttrib = attrib;
-		c.data.thisAttribClass = charClass;
-		c.server.update().then(function(response){
-			//c.data.generateAttrib = undefined;
-			//c.data.thisAttrib = undefined;
-			//c.data.thisAttribClass = undefined;
-			if (attrib == 'strength') {
-				$scope.character.strength = response.character_fighter_roll;
-			}
-			if (attrib == 'dexterity') {
-				$scope.character.dexterity = response.character_ranged_roll;
-			}
-			if (attrib == 'wisdom') {
-				$scope.character.wisdom = response.character_magic_roll;
-			}
-			//$scope.character[attrib] = response.character[attrib];
-		})
-	}
+        <client_script><![CDATA[function($scope, spUtil, $http) {
+    /* widget controller */
+    var c = this;
+    $scope.character = {};
+    $scope.character.item = {};
 
 
-	$scope.showStep = function(step) {
-		if (step == 2) {
-			//this is for character.name
-			if ($scope.character.name) {
-				return true;
-			}
-			return false;
-		}
-		if (step == 3) {
-			//console.log("SHOW STEP Name",$scope.character.name);
-			if (typeof $scope.character.name !== 'undefined' && $scope.character.name != '') {
-				//console.log("SHOW STEP Strength",$scope.character.strength);
-				if ((typeof $scope.character.strength !== 'undefined' && $scope.character.strength != '') && (typeof $scope.character.wisdom !== 'undefined' && $scope.character.wisdom != '') && (typeof $scope.character.dexterity !== 'undefined' && $scope.character.dexterity != '')) {
-					return true;
-				}
-			}
-			return false;
-		}
-	}
+    //This should update if the record changes in real time
+    spUtil.recordWatch($scope, "x_0478_kids_dungeo_character_card", "active=true", function(name, data) {
+        spUtil.update($scope);
+    });
 
-	$scope.randomItems = function(type) {
-		console.log("TYPE",type);
-		$http({
-			method:'GET',
-			headers: {
-				"Content-Type": "application/json;charset=UTF-8"
-			},
-			url: '/api/x_0478_kids_dungeo/kidds/randomItems/'+type.value.toString()+'/1'
-		}).success(function(response) {
-			console.log(response);
-		}).error(function(error) {
-			console.log(error);
-		})
-	}
-}
+    $scope.getCharacterImg = function(charType) {
+        //console.log(charType);
+        //need to grab the image and display it.
+        $scope.character.strength = '';
+        $scope.character.wisdom = '';
+        $scope.character.dexterity = '';
+        c.data.show_image = charType;
 
-]]></client_script>
+        c.server.update().then(function(response) {
+            c.data.show_image = undefined;
+
+        });
+    }
+
+    $scope.generateName = function() {
+        c.data.get_name = true;
+        c.server.update().then(function(response) {
+            c.data.get_name = undefined;
+
+            $scope.character.name = response.character_name;
+
+        });
+    }
+
+    $scope.generateAttrib = function(attrib, charClass) {
+        c.data.generateAttrib = true;
+        c.data.thisAttrib = attrib;
+        c.data.thisAttribClass = charClass;
+        c.server.update().then(function(response) {
+            //c.data.generateAttrib = undefined;
+            //c.data.thisAttrib = undefined;
+            //c.data.thisAttribClass = undefined;
+            if (attrib == 'strength') {
+                $scope.character.strength = response.character_fighter_roll;
+            }
+            if (attrib == 'dexterity') {
+                $scope.character.dexterity = response.character_ranged_roll;
+            }
+            if (attrib == 'wisdom') {
+                $scope.character.wisdom = response.character_magic_roll;
+            }
+            //$scope.character[attrib] = response.character[attrib];
+        })
+    }
+
+
+    $scope.showStep = function(step) {
+        if (step == 2) {
+            //this is for character.name
+            if ($scope.character.name) {
+                return true;
+            }
+            return false;
+        }
+        if (step == 3) {
+            //console.log("SHOW STEP Name",$scope.character.name);
+            if (typeof $scope.character.name !== 'undefined' && $scope.character.name != '') {
+                //console.log("SHOW STEP Strength",$scope.character.strength);
+                if ((typeof $scope.character.strength !== 'undefined' && $scope.character.strength != '') && (typeof $scope.character.wisdom !== 'undefined' && $scope.character.wisdom != '') && (typeof $scope.character.dexterity !== 'undefined' && $scope.character.dexterity != '')) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        if (step == 4) {
+            if ($scope.character && $scope.character.item && $scope.character.item.display_value) {
+                return true;
+            }
+            return false;
+        }
+    }
+
+    function buildItemStats(item) {
+        var plus = '';
+        var minus = '';
+        if (item.mod.attribute_mod) {
+            //goes with mod_value
+            plus = " +" + item.mod.mod_value + " " + item.mod.attribute_mod;
+        }
+        if (item.mod.minus_attrib_mod) {
+            minus = " -" + item.mod.minus_mod_value + " " + item.mod.minus_attrib_mod;
+        }
+
+        return item.name + " " + plus + " " + minus;
+
+    }
+
+    $scope.randomItems = function(type) {
+        //console.log("TYPE",type);
+
+        $http({
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json;charset=UTF-8"
+            },
+            url: '/api/x_0478_kids_dungeo/kidds/randomItems/' + type.value.toString() + '/1'
+        }).success(function(response) {
+            console.log(response);
+            if (response.result && response.result.items) {
+                //got something back
+                $scope.character.item = response.result.items;
+                $scope.character.item.display_value = buildItemStats(response.result.items);
+
+                console.log("ITEM", $scope.character.item);
+            }
+
+        }).error(function(error) {
+            console.log(error);
+        });
+    }
+
+    $scope.saveCharacter = function(char) {
+        console.log("SAVE", char, $scope.character);
+        //clean it up a bit
+        var character = {};
+        character.attributes = {};
+        character.item = {};
+        character.attributes.dexterity = char.dexterity;
+        character.attributes.wisdom = char.wisdom;
+        character.attributes.strength = char.strength;
+        character.name = char.name;
+        character.type = char.class;
+        character.item[char.item.type] = char.item;
+
+        console.log("CHARACTER",character);
+        var str = JSON.stringify(character);
+        $http({
+        	method: 'POST',
+        	headers: {
+        		"Content-Type": "application/json;charset=UTF-8"
+        	},
+        	url: '/api/x_0478_kids_dungeo/kidds/saveCharacter/'+str
+        }).success(function(response) {
+        	console.log(response);
+        }).error(function(error) {
+
+        });
+
+    }
+}]]></client_script>
         <controller_as>c</controller_as>
         <css>.step-class-letter {
   color: #fff;
@@ -299,7 +357,7 @@
         <sys_created_on>2016-10-24 23:50:54</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>780a8a6f6fea2200432530767b3ee41e</sys_id>
-        <sys_mod_count>279</sys_mod_count>
+        <sys_mod_count>309</sys_mod_count>
         <sys_name>Character Picker</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
@@ -307,7 +365,7 @@
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_widget_780a8a6f6fea2200432530767b3ee41e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-15 22:11:07</sys_updated_on>
+        <sys_updated_on>2017-05-16 21:07:54</sys_updated_on>
         <template><![CDATA[<div class="container">
 <!-- your widget template -->
   <form name="character">
@@ -315,7 +373,7 @@
       
     	<label>>1 Character Name:</label>
       <input type="text" ng-model="character.name"  readonly="readonly" class="form-control"/>
-      <div style="padding-top: 10px;"><button type="button" class="btn btn-info" ng-click="generateName()">Generate</button></div>  
+      <div style="padding-top: 10px;"><button type="button" ng-disabled="disableBtn()" class="btn btn-info" ng-click="generateName()">Generate</button></div>  
       
     </div>
     <div class="form-group row" ng-show="showStep(2)">
@@ -328,18 +386,22 @@
       </select>
       <div style="padding-top: 10px;">
         <fieldset class="form-inline">
-          <img ng-show="c.data.char_image !== undefined" src="{{c.data.char_image}}" style="float:left; margin-right: 10px;margin-bottom: 20px;"/>
+          <!--<img ng-show="c.data.char_image !== undefined" src="{{c.data.char_image}}" style="float:left; margin-right: 10px;margin-bottom: 20px;"/>-->
           <p ng-show="c.data.char_image !== undefined">ATTRIBUTES<p>
-          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Strength:</label> <input type="text" ng-model="character.strength" readonly="readonly" class="form-control" style="width: 50px;" value="0"/><button type="button" class="btn btn-info" ng-click="generateAttrib('strength',character.class.label)">Roll</button></div>
-          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Dexterity:</label> <input type="text" ng-model="character.dexterity" readonly="readonly" class="form-control" style="width: 50px;" value="0"/><button type="button" class="btn btn-info" ng-click="generateAttrib('dexterity',character.class.label)">Roll</button></div>
-          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Wisdom:</label> <input type="text" ng-model="character.wisdom" readonly="readonly" class="form-control" style="width: 50px;" value="0"/><button type="button" class="btn btn-info" ng-click="generateAttrib('wisdom',character.class.label)">Roll</button></div>
+          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Strength:</label> <input type="text" ng-model="character.strength" readonly="readonly" class="form-control" style="width: 50px;" value="0"/><button ng-disabled="disableBtn()" type="button" class="btn btn-info" ng-click="generateAttrib('strength',character.class.label)">Roll</button></div>
+          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Dexterity:</label> <input type="text" ng-model="character.dexterity" readonly="readonly" class="form-control" style="width: 50px;" value="0"/><button ng-disabled="disableBtn()" type="button" class="btn btn-info" ng-click="generateAttrib('dexterity',character.class.label)">Roll</button></div>
+          <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Wisdom:</label> <input type="text" ng-model="character.wisdom" readonly="readonly" class="form-control" style="width: 50px;" value="0"/><button ng-disabled="disableBtn()" type="button" class="btn btn-info" ng-click="generateAttrib('wisdom',character.class.label)">Roll</button></div>
         </fieldset>
       </div>
       
     </div>
     <div class="form-group row" ng-show="showStep(3)">
-      <label>>3 Items</label>
-      <button class="btn btn-info" ng-click="randomItems(character.class)">Roll</button>
+      <label>>3 Items: </label>
+      <input ng-model="character.item.display_value" readonly="readonly" class="form-control"/>
+      <div style="padding-top: 10px;"><button ng-disabled="disableBtn()" class="btn btn-info" ng-click="randomItems(character.class)">Roll</button></div>
+    </div>
+    <div class="form-group row" ng-show="showStep(4)">
+      <button class="btn btn-success" ng-disabled="disableBtn()" ng-click="saveCharacter(character)">Save Character</button>
     </div>
   </form>
 </div>]]></template>

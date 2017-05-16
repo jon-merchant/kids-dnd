@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
     <element extends="x_0478_kids_dungeo_dungeons_and_dragons" label="Character Card" max_length="40" name="x_0478_kids_dungeo_character_card" type="collection">
+        <element label="Armors" max_length="4000" name="armors" reference="x_0478_kids_dungeo_character_items" reference_qual="item_type=Armor^EQ" reference_qual_condition="item_type=Armor^EQ" type="glide_list"/>
+        <element label="Character Name" max_length="40" name="character_name" type="string"/>
+        <element label="Character Class" max_length="32" name="character_type" reference="x_0478_kids_dungeo_character_type" type="reference"/>
         <element label="Dexterity" max_length="40" name="dexterity" type="integer"/>
         <element default="100" label="Health" max_length="40" name="health" type="integer"/>
         <element default="1" label="Level" max_length="40" name="level" type="integer"/>
         <element default="100" label="Level Points" max_length="40" name="level_points" type="integer"/>
         <element default="100" label="Mana" max_length="40" name="mana" type="string"/>
         <element default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Potions" max_length="4000" name="potions" reference="x_0478_kids_dungeo_character_items" reference_qual="item_type=Potion^EQ" reference_qual_condition="item_type=Potion^EQ" type="glide_list"/>
         <element label="Strength" max_length="40" name="strength" type="integer"/>
-        <element attributes="edge_encryption_enabled=true" choice="1" label="Character Class" max_length="40" name="u_choice_1" type="string">
-            <choice>
-                <element label="Fighter" value="Fighter"/>
-                <element label="Magic" value="Magic"/>
-                <element label="Ranged" value="Ranged"/>
-            </choice>
-        </element>
-        <element attributes="edge_encryption_enabled=true" label="Character Name" max_length="40" name="u_string_2" type="string"/>
+        <element label="Weapons" max_length="4000" name="weapons" reference="x_0478_kids_dungeo_character_items" reference_qual="item_type=Weapon^EQ" reference_qual_condition="item_type=Weapon^EQ" type="glide_list"/>
         <element label="Wisdom" max_length="40" name="wisdom" type="integer"/>
+        <index name="index">
+            <element name="character_type"/>
+        </index>
     </element>
 </database>

@@ -11,7 +11,7 @@
         </element>
         <element label="Character Type" max_length="32" name="character_type" reference="x_0478_kids_dungeo_character_type" type="reference"/>
         <element label="Type Modifier" max_length="32" name="item_modifier" reference="x_0478_kids_dungeo_character_type" type="reference"/>
-        <element label="Item Name" max_length="40" name="item_name" type="string"/>
+        <element attributes="readable=true" display="true" label="Item Name" max_length="40" name="item_name" type="string"/>
         <element choice="1" label="Item Type" max_length="40" name="item_type" type="choice">
             <choice>
                 <element label="Armor" value="Armor"/>
