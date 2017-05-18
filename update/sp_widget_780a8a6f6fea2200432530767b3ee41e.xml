@@ -169,7 +169,7 @@
         <internal>false</internal>
         <link/>
         <name>Character Picker</name>
-        <option_schema/>
+        <option_schema>[{"name":"test_option","label":"Test Option","type":"string"}]</option_schema>
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
@@ -357,7 +357,7 @@
         <sys_created_on>2016-10-24 23:50:54</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>780a8a6f6fea2200432530767b3ee41e</sys_id>
-        <sys_mod_count>309</sys_mod_count>
+        <sys_mod_count>310</sys_mod_count>
         <sys_name>Character Picker</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
@@ -365,7 +365,7 @@
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_widget_780a8a6f6fea2200432530767b3ee41e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-16 21:07:54</sys_updated_on>
+        <sys_updated_on>2017-05-17 20:11:11</sys_updated_on>
         <template><![CDATA[<div class="container">
 <!-- your widget template -->
   <form name="character">
