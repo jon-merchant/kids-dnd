@@ -5,13 +5,13 @@
             <element>.begin_split</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2017-05-15 20:23:30</sys_created_on>
-            <sys_id>700af6704fb23200745fb4a18110c785</sys_id>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>2186d89fdbd20300dfa77fcfbf961990</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 20:23:30</sys_updated_on>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
@@ -19,13 +19,13 @@
             <element>character_type</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2017-05-15 20:23:30</sys_created_on>
-            <sys_id>f00af6704fb23200745fb4a18110c785</sys_id>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>a186d89fdbd20300dfa77fcfbf961990</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 20:23:30</sys_updated_on>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -33,153 +33,153 @@
             <element>item_name</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2017-05-15 20:23:30</sys_created_on>
-            <sys_id>740af6704fb23200745fb4a18110c785</sys_id>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>2586d89fdbd20300dfa77fcfbf961990</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 20:23:30</sys_updated_on>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
             <sys_user/>
             <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.split</element>
-            <position>3</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2017-05-15 20:23:30</sys_created_on>
-            <sys_id>f40af6704fb23200745fb4a18110c785</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 20:23:30</sys_updated_on>
-            <sys_user/>
-            <type>.split</type>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>item_modifier</element>
-            <position>4</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2017-05-15 20:23:30</sys_created_on>
-            <sys_id>780af6704fb23200745fb4a18110c785</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 20:23:30</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>item_type</element>
-            <position>5</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2017-05-15 20:23:30</sys_created_on>
-            <sys_id>f80af6704fb23200745fb4a18110c785</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 20:23:30</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.end_split</element>
-            <position>6</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2017-05-15 20:23:30</sys_created_on>
-            <sys_id>7c0af6704fb23200745fb4a18110c785</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 20:23:30</sys_updated_on>
-            <sys_user/>
-            <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>modifier_value</element>
-            <position>7</position>
+            <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2017-05-15 20:34:53</sys_created_on>
-            <sys_id>679c3eb04fb23200745fb4a18110c71c</sys_id>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>a586d89fdbd20300dfa77fcfbf961990</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 20:34:53</sys_updated_on>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>attribute_modifier</element>
-            <position>8</position>
+            <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2017-05-15 20:37:37</sys_created_on>
-            <sys_id>bf3df2f04fb23200745fb4a18110c723</sys_id>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>2986d89fdbd20300dfa77fcfbf961990</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 20:37:37</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>minus_modifier_value</element>
-            <position>9</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2017-05-15 20:43:27</sys_created_on>
-            <sys_id>419e32344fb23200745fb4a18110c77f</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 20:43:27</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>attribute_minus_modifier</element>
-            <position>10</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2017-05-15 20:43:27</sys_created_on>
-            <sys_id>899e32344fb23200745fb4a18110c787</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 20:43:27</sys_updated_on>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>potion_type</element>
-            <position>11</position>
+            <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2017-05-15 20:55:20</sys_created_on>
-            <sys_id>034187744fb23200745fb4a18110c72b</sys_id>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>a986d89fdbd20300dfa77fcfbf961990</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 20:55:20</sys_updated_on>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>potion_modifier</element>
-            <position>12</position>
+            <position>6</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2017-05-15 20:55:20</sys_created_on>
-            <sys_id>134187744fb23200745fb4a18110c734</sys_id>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>2d86d89fdbd20300dfa77fcfbf961990</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 20:55:20</sys_updated_on>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>ad86d89fdbd20300dfa77fcfbf961990</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>rarity</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>2186d89fdbd20300dfa77fcfbf961991</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>item_modifier</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>a186d89fdbd20300dfa77fcfbf961991</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>item_type</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>2586d89fdbd20300dfa77fcfbf961991</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>minus_modifier_value</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>a586d89fdbd20300dfa77fcfbf961991</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>attribute_minus_modifier</element>
+            <position>12</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>2986d89fdbd20300dfa77fcfbf961991</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -187,13 +187,97 @@
             <element>minimum_level</element>
             <position>13</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2017-05-15 21:31:12</sys_created_on>
-            <sys_id>ac8943784fb23200745fb4a18110c7b6</sys_id>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>a986d89fdbd20300dfa77fcfbf961991</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-05-15 21:31:12</sys_updated_on>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>14</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>2d86d89fdbd20300dfa77fcfbf961991</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>value</element>
+            <position>15</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>ad86d89fdbd20300dfa77fcfbf961991</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>monetary_value</element>
+            <position>16</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>2186d89fdbd20300dfa77fcfbf961992</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>use_dice</element>
+            <position>17</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>a186d89fdbd20300dfa77fcfbf961992</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>dice</element>
+            <position>18</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>2586d89fdbd20300dfa77fcfbf961992</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>dice_rolls</element>
+            <position>19</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-11-13 02:33:47</sys_created_on>
+            <sys_id>a586d89fdbd20300dfa77fcfbf961992</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0478_kids_dungeo_character_items" sys_domain="global" view="Default view">bc0af6704fb23200745fb4a18110c77f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-11-13 02:33:47</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

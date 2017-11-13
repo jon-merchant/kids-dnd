@@ -56,6 +56,14 @@
 			//$scope.character[attrib] = response.character[attrib];
 		})
 	}
+	$scope.generateWeapon = function() {
+		console.log("clicked");
+		c.data.generateWeapon = true;
+		c.server.update().then(function(response) {
+			console.log(response);
+			$scope.character.weapon = response.weapon;
+		})
+	}
 }
 
 ]]></client_script>
@@ -190,7 +198,34 @@
 		
 		return img;
 	}
-	
+	function getRandom(min,max) {
+		//should be moved to a script include
+		min = Math.ceil(min);
+		max = Math.floor(max);
+		return Math.round(Math.floor(Math.random() * (max - min)) + min); //The maximum is exclusive and the minimum is inclusive
+	}
+	function getWeapon() {
+		
+		var weapons = [];
+		var gr = new GlideRecord('x_0478_kids_dungeo_character_items');
+		gr.addQuery('minimum_level','1');
+		gr.addQuery('item_type','weapon');
+		gr.query();
+		var wc = gr.getRowCount();
+		while(gr.next()) {
+			$sp.log(gr.getDisplayValue('item_name'));
+			weapons.push({'sys_id':gr.getUniqueValue(),'name':gr.getDisplayValue('item_name')});	
+		}
+		
+		var w = getRandom(0,wc);
+		$sp.log(w);
+		var weapon = {
+			'random':w,
+			'weapons':weapons,
+			'picked':weapons[w]
+		}
+		return weapon;
+	}
 	
 	data.char_class = [];
 	//get the different classes v1 = 3
@@ -252,7 +287,13 @@
 			}
 			data.character_ranged_roll = roll.sum;
 		}
+		data.generateAttrib = false;
+	}
+	
+	if (input && input.generateWeapon) {
 		
+		var weapon = getWeapon();
+		data.weapon = weapon;
 	}
 	
 
@@ -263,7 +304,7 @@
         <sys_created_on>2016-10-24 23:50:54</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>780a8a6f6fea2200432530767b3ee41e</sys_id>
-        <sys_mod_count>258</sys_mod_count>
+        <sys_mod_count>280</sys_mod_count>
         <sys_name>Character Picker</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
@@ -271,7 +312,7 @@
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_widget_780a8a6f6fea2200432530767b3ee41e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-11-12 23:00:36</sys_updated_on>
+        <sys_updated_on>2017-11-13 03:45:47</sys_updated_on>
         <template><![CDATA[<div>
 <!-- your widget template -->
   <form name="character">
@@ -293,7 +334,7 @@
       <div style="padding-top: 10px;">
         <fieldset class="form-inline">
           <img ng-show="c.data.char_image !== undefined" src="{{c.data.char_image}}" style="float:left; margin-right: 10px;margin-bottom: 20px;"/>
-          <p ng-show="c.data.char_image !== undefined">ATTRIBUTES<p>
+          <p ng-show="c.data.char_image !== undefined"><label class="control-label">ATTRIBUTES</label><p>
           <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Strength:</label> <input type="text" ng-model="character.strength" readonly="readonly" class="form-control" style="width: 50px;" value="0"/><button type="button" class="btn btn-info" ng-click="generateAttrib('strength',character.class.label)">Roll</button></div>
           <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Dexterity:</label> <input type="text" ng-model="character.dexterity" readonly="readonly" class="form-control" style="width: 50px;" value="0"/><button type="button" class="btn btn-info" ng-click="generateAttrib('dexterity',character.class.label)">Roll</button></div>
           <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Wisdom:</label> <input type="text" ng-model="character.wisdom" readonly="readonly" class="form-control" style="width: 50px;" value="0"/><button type="button" class="btn btn-info" ng-click="generateAttrib('wisdom',character.class.label)">Roll</button></div>
@@ -303,6 +344,12 @@
     </div>
     <div class="form-group row" ng-show="character.strength && character.wisdom && character.dexterity">
       <label>>3 Items</label>
+      <p>
+        <label class="control-label">Weapon</label>
+        <input ng-model="character.weapon.picked.name" readonly="readonly" class="form-control"/>
+      
+      </p>
+      <div style="padding-top: 10px;"><button class="btn btn-info" ng-click="generateWeapon()">Generate</button></div>
     </div>
   </form>
 </div>]]></template>

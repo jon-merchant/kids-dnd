@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>797014dbdbd20300dfa77fcfbf9619af</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_0478_kids_dungeo_character_items">
+    <x_0478_kids_dungeo_character_items action="INSERT_OR_UPDATE">
+        <attribute_minus_modifier/>
+        <attribute_modifier>Strength</attribute_modifier>
+        <character_type/>
+        <dice>1d4</dice>
+        <dice_rolls>2</dice_rolls>
+        <item_modifier display_value="Fighter">053014dbdbd20300dfa77fcfbf96198f</item_modifier>
+        <item_name>Sword of Might</item_name>
+        <item_type>Weapon</item_type>
+        <minimum_level>1</minimum_level>
+        <minus_modifier_value/>
+        <modifier_value>1</modifier_value>
+        <monetary_value/>
+        <potion_modifier/>
+        <potion_type/>
+        <rarity>Uncommon</rarity>
+        <sys_class_name>x_0478_kids_dungeo_character_items</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-11-13 02:09:37</sys_created_on>
+        <sys_id>797014dbdbd20300dfa77fcfbf9619af</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-11-13 02:52:47</sys_updated_on>
+        <use_dice>true</use_dice>
+        <value>2</value>
+    </x_0478_kids_dungeo_character_items>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-11-13 02:54:14</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>c53bd013db160300dfa77fcfbf961980</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Sword of Might</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_update_name>sys_metadata_link_c53bd013db160300dfa77fcfbf961980</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-11-13 02:54:14</sys_updated_on>
+        <tablename>x_0478_kids_dungeo_character_items</tablename>
+    </sys_metadata_link>
+</record_update>
