@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-11-12 23:08:08</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>0977eb07db920300dfa77fcfbf9619a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_0478_kids_dungeo_items.x_0478_kids_dungeo.items_user</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_security_acl display_value="x_0478_kids_dungeo_items">c977eb07db920300dfa77fcfbf96199f</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_0977eb07db920300dfa77fcfbf9619a3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-11-12 23:08:08</sys_updated_on>
+        <sys_user_role display_value="x_0478_kids_dungeo.items_user" name="x_0478_kids_dungeo.items_user">b0776fc3db920300dfa77fcfbf961981</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_0478_kids_dungeo_dungeons_and_dragons_user" name="x_0478_kids_dungeo_dungeons_and_dragons_user">15a62ca36faa2200432530767b3ee42b</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2017-11-13 00:10:32</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>8fb5730fdb920300dfa77fcfbf9619de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>15a62ca36faa2200432530767b3ee42b</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_update_name>sys_embedded_help_role_8fb5730fdb920300dfa77fcfbf9619de</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2017-11-13 00:10:32</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

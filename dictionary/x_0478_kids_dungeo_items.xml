@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Items" max_length="40" name="x_0478_kids_dungeo_items" type="collection">
+        <element choice="1" label="Class" max_length="40" name="class" type="choice">
+            <choice>
+                <element label="Fighter" value="Fighter"/>
+                <element label="Magic" value="Magic"/>
+                <element label="Ranged" value="Ranged"/>
+            </choice>
+        </element>
+        <element label="Dexterity" max_length="40" name="dexterity" type="string"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element choice="1" label="Rarity" max_length="40" name="rarity" type="choice">
+            <choice>
+                <element label="Common" sequence="10" value="Common"/>
+                <element label="Uncommon" sequence="15" value="Uncommon"/>
+                <element label="Rare" sequence="20" value="Rare"/>
+                <element label="Very Rare" sequence="25" value="Very Rare"/>
+                <element label="Legendary" sequence="30" value="Legendary"/>
+            </choice>
+        </element>
+        <element label="Roll Dice" max_length="40" name="roll_dice" type="boolean"/>
+        <element label="Strength" max_length="40" name="strength" type="string"/>
+        <element choice="1" label="Type" max_length="40" name="type" type="choice">
+            <choice>
+                <element label="Armor" value="Armor"/>
+                <element label="Potion" value="Potion"/>
+                <element label="Weapon" value="Weapon"/>
+            </choice>
+        </element>
+        <element label="Wisdom" max_length="40" name="wisdom" type="string"/>
+    </element>
+</database>
