@@ -1,46 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sp_widget">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
-        <client_script><![CDATA[function($scope,spUtil) {
-  /* widget controller */
-  var c = this;
-	
-	
-	
+        <category/>
+        <client_script><![CDATA[function ($scope, spUtil, $uibModal) {
+	/* widget controller */
+	var c = this;
+
+
+
 	//This should update if the record changes in real time
-	spUtil.recordWatch($scope, "x_0478_kids_dungeo_character_card", "active=true", function(name, data) {
+	spUtil.recordWatch($scope, "x_0478_kids_dungeo_character_card", "active=true", function (name, data) {
 		spUtil.update($scope);
 	});
-	
-	$scope.getCharacterImg = function(charType) {
+
+	$scope.getCharacterImg = function (charType) {
 		//console.log(charType);
 		//need to grab the image and display it.
 		$scope.character.strength = '';
 		$scope.character.wisdom = '';
 		$scope.character.dexterity = '';
 		c.data.show_image = charType;
-		
-		c.server.update().then(function(response){
+
+		c.server.update().then(function (response) {
 			c.data.show_image = undefined;
-			
+
 		});
 	}
-	
-	$scope.generateName = function() {
+
+	$scope.generateName = function () {
 		c.data.get_name = true;
-		c.server.update().then(function(response){
+		c.server.update().then(function (response) {
 			c.data.get_name = undefined;
-			
+
 			$scope.character.name = response.character_name;
-			
+
 		});
 	}
-	
-	$scope.generateAttrib = function(attrib,charClass) {
+
+	$scope.generateAttrib = function (attrib, charClass) {
 		c.data.generateAttrib = true;
 		c.data.thisAttrib = attrib;
 		c.data.thisAttribClass = charClass;
-		c.server.update().then(function(response){
+		c.server.update().then(function (response) {
 			//c.data.generateAttrib = undefined;
 			//c.data.thisAttrib = undefined;
 			//c.data.thisAttribClass = undefined;
@@ -56,23 +56,89 @@
 			//$scope.character[attrib] = response.character[attrib];
 		})
 	}
-	$scope.generateWeapon = function() {
+	$scope.generateWeapon = function () {
 		console.log("clicked");
 		c.data.generateWeapon = true;
-		c.server.update().then(function(response) {
+		c.server.update().then(function (response) {
 			console.log(response);
 			$scope.character.weapon = response.weapon;
 		})
 	}
-}
 
-]]></client_script>
+	c.openModal = function (template) {
+		if (!template) {
+			template = 'kiddsDefaultTemplate';
+		}
+		c.modalInstance = $uibModal.open({
+			templateUrl: template,
+			scope: $scope
+		});
+	}
+
+	c.closeModal = function () {
+		$scope.modalData = null;
+		c.modalInstance.close();
+	}
+
+	c.popImage = function (img) {
+		var template = 'kiddsCharImage';
+		c.data.modalData = {
+			img: img
+		}
+		c.openModal(template);
+	}
+}]]></client_script>
         <controller_as>c</controller_as>
         <css>.step-class-letter {
   color: #fff;
   margin-top: -2px;
 }
-</css>
+
+.card {
+  background-color: #cec2ae;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  display: inline-block;
+  margin: 10px 5px;
+  width: 150px;
+  height: 200px;
+  border-radius: 4px;
+
+  &amp;:first-child {
+    margin-left: 0px;
+  }
+
+  &amp;:last-child {
+    margin-right: 0px;
+  }
+
+  &amp;:hover {
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.95);
+  }
+}
+
+.card-img {
+  border-radius: 4px 4px 0 0;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  height: 150px;
+  width: 100%;
+}
+
+.card-options {
+  border-top: 1px solid;
+  border-color: darken($color: #cec2ae, $amount: 15);
+  width: 150px;
+  margin-top: -5px;
+  &amp; &gt; .col-sm-6 {
+    padding: 14px 0px;  
+    &amp;:first-child {
+      border-right: 1px solid;
+      
+    }
+  }
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -98,50 +164,7 @@
 		return vari;
 	}
 	
-	function add(a, b) {
-    return a + b;
-	}
-	function rollDice(sides,rolls,mods) {
-		$sp.log("sides: "+sides);
-		$sp.log("rolls: "+rolls);
-		var resp = {};
-		var d = [];
-		var sum = 0;
-		var avg = 0;
-		if (typeof mods === 'undefined') {
-			//the variable is defined
-			mods = 0;
-		}
-		$sp.log("mods: "+mods);
-		for(i=0;i<rolls;i++) {
-			d[i] = parseInt(Math.floor(Math.random() * sides) + 1);
-			//console.log(d[i]);
-			d[i] = d[i] + mods;
-			sum += d[i];
-
-		}
-		//avg = Math.floor(sum / 3);
-
-		//console.log(d);
-		var dd = d;
-		dd.sort(function(a, b){return b-a});
-		dd.pop();
-		//console.log(dd);
-		var sum2 = dd.reduce(add, 0);
-		$sp.log(sum2);
-		//console.log(sum2);
-		avg = Math.floor(sum / dd.length);
-
-		//console.log(sum);
-		//console.log(avg);
-
-		resp.oRoll = d;
-		resp.roll = dd;
-		resp.sum = sum2;
-		resp.avg = avg;
-
-		return resp;
-	}
+	
 
 //var roll = rollDice(6,4);
 //console.log(roll);
@@ -164,20 +187,9 @@
 				
 	}
 	
-	function getCharName() {
-		
-		var names = [
-    "Ailo","Aerithllorgue","Yasursudru","Tyala","Nirithstidru","Ariria","Idue","Seori","Pharin","Slitherap","Aesty","Phiadainu","Eully","Tyaidaisup","Sirithnu","Athenurgue","Eudain","Rially","Aelophos","Riasurm","Pheusrisuir","Yastynup",
-    "Heoral","Faesurphos","Pheolae","Tyaistyphos","Istyn","Sailanulis","Pheudueru","Aeral","Sadaphos","Yadain","Yarithsurin","Iasrillodil"
-    ];
-  
-		var fName = Math.floor((Math.random() * names.length) + 1);
-		var lName = Math.floor((Math.random() * names.length) + 1);
-		
-		return names[fName]+" "+names[lName];
-	}
 	
-	function getCharImage(charType) {
+	
+	/*function getCharImage(charType) {
 		var img = "https://placehold.it/184x284?text=N/A";
 		//https://dev16833.service-now.com/80723a2b6f2e2200432530767b3ee438.iix
 		var gr = new GlideRecord('x_0478_kids_dungeo_character_image');
@@ -197,7 +209,7 @@
 		}
 		
 		return img;
-	}
+	}*/
 	function getRandom(min,max) {
 		//should be moved to a script include
 		min = Math.ceil(min);
@@ -242,15 +254,16 @@
 	
 	
 	//talk back
+	var kiddsUtils = new x_0478_kids_dungeo.kiddsUtils();
 	if (input && input.show_image) {
 		$sp.log(input.show_image.label);
 		//now we need to grab the images
-		data.char_image = getCharImage(input.show_image.value);
+		data.char_images = kiddsUtils.getCharImageSelectorList(input.show_image.value);
 	}
 	
 	if (input && input.get_name == true) {
 		//$sp.log(input.get_name);
-		var cName = getCharName();
+		var cName = kiddsUtils.getCharName();
 		//$sp.log(cName);
 		data.character_name = cName;
 	} 
@@ -261,32 +274,17 @@
 		$sp.log(input.thisAttribClass);
 		
 		//need to check which mod to add too
-		var roll;
+		var char = kiddsUtils.getCharAttributes(input);
 		if (input.thisAttrib == 'wisdom') {
-			if (input.thisAttribClass == 'Magic') {
-				//magic gets the mod
-				roll = rollDice(6,4,10);
-			} else {
-				roll = rollDice(6,4);
-			}
-			data.character_magic_roll = roll.sum;			
+			data.character_magic_roll = char.character_magic_roll;
 		}
 		if (input.thisAttrib == 'strength') {
-			if (input.thisAttribClass == 'Fighter') {
-				roll = rollDice(6,4,10);
-			} else {
-				roll = rollDice(6,4);
-			}
-			data.character_fighter_roll = roll.sum;
+			data.character_fighter_roll = char.character_fighter_roll;
 		}
 		if (input.thisAttrib == 'dexterity') {
-			if (input.thisAttribClass == 'Ranged') {
-				roll = rollDice(6,4,10);
-			} else {
-				roll = rollDice(6,4);
-			}
-			data.character_ranged_roll = roll.sum;
+			data.character_ranged_roll = char.character_ranged_roll;
 		}
+		
 		data.generateAttrib = false;
 	}
 	
@@ -302,17 +300,15 @@
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-10-24 23:50:54</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>780a8a6f6fea2200432530767b3ee41e</sys_id>
-        <sys_mod_count>280</sys_mod_count>
+        <sys_mod_count>354</sys_mod_count>
         <sys_name>Character Picker</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_widget_780a8a6f6fea2200432530767b3ee41e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-11-13 03:45:47</sys_updated_on>
+        <sys_updated_on>2022-02-28 00:40:22</sys_updated_on>
         <template><![CDATA[<div>
 <!-- your widget template -->
   <form name="character">
@@ -331,9 +327,23 @@
         ng-change='getCharacterImg(character.class)' class="form-control">
         <option style="display:none" value="">Select A Class</option>
       </select>
+      <div class="img-selector" ng-show="c.data.char_images">
+        <div class="card" ng-repeat="img in c.data.char_images track by $index">
+          <div class="card-img" style="background-image:url({{img}});"></div>
+          <div class="card-options">
+            <div class="col-sm-6 text-center" ng-click="c.popImage(img)">
+              <i class="fa fa-eye fa-lg"></i>
+            </div>
+            <div class="col-sm-6 text-center">
+              <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        
+      </div>
       <div style="padding-top: 10px;">
         <fieldset class="form-inline">
-          <img ng-show="c.data.char_image !== undefined" src="{{c.data.char_image}}" style="float:left; margin-right: 10px;margin-bottom: 20px;"/>
+          <!--<img ng-show="c.data.char_image !== undefined" src="{{c.data.char_image}}" style="float:left; margin-right: 10px;margin-bottom: 20px;"/>-->
           <p ng-show="c.data.char_image !== undefined"><label class="control-label">ATTRIBUTES</label><p>
           <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Strength:</label> <input type="text" ng-model="character.strength" readonly="readonly" class="form-control" style="width: 50px;" value="0"/><button type="button" class="btn btn-info" ng-click="generateAttrib('strength',character.class.label)">Roll</button></div>
           <div ng-show="c.data.char_image !== undefined" style="padding-top: 10px;" ><label class="control-label">Dexterity:</label> <input type="text" ng-model="character.dexterity" readonly="readonly" class="form-control" style="width: 50px;" value="0"/><button type="button" class="btn btn-info" ng-click="generateAttrib('dexterity',character.class.label)">Roll</button></div>

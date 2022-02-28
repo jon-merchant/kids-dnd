@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_0478_kids_dungeo.kiddsUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>kiddsUtils</name>
+        <script><![CDATA[var kiddsUtils = Class.create();
+kiddsUtils.prototype = {
+    initialize: function() {
+        
+    },
+    TABLE_CHARACTER_CARD: 'x_0478_kids_dungeo_character_card',
+    TABLE_CHARACTER_IMAGE: 'x_0478_kids_dungeo_character_image',
+    TABLE_CHARACTER_ITEMS: 'x_0478_kids_dungeo_character_items',
+    TABLE_CHARACTER_NAMES: 'x_0478_kids_dungeo_character_names',
+    TABLE_DUNGEONS_AND_DRAGONS: 'x_0478_kids_dungeo_dungeons_and_dragons',
+
+    _add: function(a, b) {
+        return a + b;
+    },
+
+    rollDice: function(sides,rolls,mods){
+        /**
+         * Use params to get a dice roll value
+         * @param: sides : int
+         * @param: roles: int
+         * @param: mods: int
+         * @return: resp: int
+         */
+
+        var resp = {};
+		var d = [];
+		var sum = 0;
+		var avg = 0;
+		if (typeof mods === 'undefined') {
+			//the variable is defined
+			mods = 0;
+		}
+		$sp.log("mods: "+mods);
+		for(i=0;i<rolls;i++) {
+			d[i] = parseInt(Math.floor(Math.random() * sides) + 1);
+			//console.log(d[i]);
+			d[i] = d[i] + mods;
+			sum += d[i];
+
+		}
+		//avg = Math.floor(sum / 3);
+
+		//console.log(d);
+		var dd = d;
+		dd.sort(function(a, b){return b-a});
+		dd.pop();
+		//console.log(dd);
+		var sum2 = dd.reduce(this._add, 0);
+		$sp.log(sum2);
+		//console.log(sum2);
+		avg = Math.floor(sum / dd.length);
+
+		//console.log(sum);
+		//console.log(avg);
+
+		resp.oRoll = d;
+		resp.roll = dd;
+		resp.sum = sum2;
+		resp.avg = avg;
+
+		return resp;
+    },
+
+    _getNamesArray: function() {
+        /**
+         * Get Array of names for the random name generator
+         * @return: array
+         */
+
+        var records = [];
+
+        var gnGR = new GlideRecord(this.TABLE_CHARACTER_NAMES);
+        gnGR.query();
+        while(gnGR.next()) {
+            records.push(gnGR.getValue('name'));
+        }
+        return records;
+    },
+
+    getCharName: function() {
+        /**
+         * random name generator
+         * @return str
+         */
+		
+		var names = this._getNamesArray();
+  
+		var fName = Math.floor((Math.random() * names.length) + 1);
+		var lName = Math.floor((Math.random() * names.length) + 1);
+
+        if (!names[fName]) {
+            fName = Math.floor((Math.random() * names.length) + 1);
+        }
+        if (!names[lName]) {
+            lName = Math.floor((Math.random() * names.length) + 1);
+        }
+        if (names[fName] == names[lName]) {
+            fName = Math.floor((Math.random() * names.length) + 1);
+        }
+		
+		return names[fName]+" "+names[lName];
+	},
+
+    getCharAttributes: function(input) {
+        var char = {};
+        var roll;
+		if (input.thisAttrib == 'wisdom') {
+			if (input.thisAttribClass == 'Magic') {
+				//magic gets the mod
+				roll = kiddsUtils.rollDice(6,4,10);
+			} else {
+				roll = kiddsUtils.rollDice(6,4);
+			}
+			char.character_magic_roll = roll.sum;			
+		}
+		if (input.thisAttrib == 'strength') {
+			if (input.thisAttribClass == 'Fighter') {
+				roll = kiddsUtils.rollDice(6,4,10);
+			} else {
+				roll = kiddsUtils.rollDice(6,4);
+			}
+			char.character_fighter_roll = roll.sum;
+		}
+		if (input.thisAttrib == 'dexterity') {
+			if (input.thisAttribClass == 'Ranged') {
+				roll = kiddsUtils.rollDice(6,4,10);
+			} else {
+				roll = kiddsUtils.rollDice(6,4);
+			}
+			char.character_ranged_roll = roll.sum;
+		}
+		char.generateAttrib = false;
+    },
+
+    getCharImageSelectorList: function(charType) {
+        /**
+         * get the images available for the class type of the character
+         * @param: charType | str
+         * @return: records | array
+         */
+
+        var records = [];
+
+        var ciGR = new GlideRecord(this.TABLE_CHARACTER_IMAGE);
+        ciGR.addEncodedQuery('character_class=' + charType + '^active=true');
+        ciGR.query();
+        while(ciGR.next()) {
+            var saGR = new GlideRecord('sys_attachment');
+			saGR.addEncodedQuery('table_sys_id=' + ciGR.sys_id + '^table_nameLIKEZZ_YYx_0478_kids_dungeo_character_image');
+			saGR.query();
+			if (saGR.next()) {
+				records.push(img = "/"+saGR.sys_id+".iix");
+			}
+        }
+        return records;
+
+    },
+
+
+
+
+    type: 'kiddsUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-02-27 21:22:31</sys_created_on>
+        <sys_id>3b0c42b797b90110c8e1f8b3f153af5d</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>kiddsUtils</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_update_name>sys_script_include_3b0c42b797b90110c8e1f8b3f153af5d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-02-27 23:12:27</sys_updated_on>
+    </sys_script_include>
+</record_update>
