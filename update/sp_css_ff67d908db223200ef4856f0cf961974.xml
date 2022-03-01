@@ -8,6 +8,10 @@ label {&#13;
   font-family: 'Metamorphous', cursive;&#13;
 }&#13;
 &#13;
+.padding-top-15 {&#13;
+  padding-top: 15px;&#13;
+}&#13;
+&#13;
 &#13;
 .char-image-modal {&#13;
   background-size: cover;&#13;
@@ -27,13 +31,13 @@ label {&#13;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-30 19:01:56</sys_created_on>
         <sys_id>ff67d908db223200ef4856f0cf961974</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>Kidds Global CSS</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_css_ff67d908db223200ef4856f0cf961974</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-02-28 01:05:25</sys_updated_on>
+        <sys_updated_on>2022-03-01 04:16:43</sys_updated_on>
     </sp_css>
 </record_update>

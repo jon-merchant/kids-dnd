@@ -17,6 +17,7 @@ kiddsUtils.prototype = {
     TABLE_CHARACTER_ITEMS: 'x_0478_kids_dungeo_character_items',
     TABLE_CHARACTER_NAMES: 'x_0478_kids_dungeo_character_names',
     TABLE_DUNGEONS_AND_DRAGONS: 'x_0478_kids_dungeo_dungeons_and_dragons',
+	TABLE_GUILDS: 'x_0478_kids_dungeo_guild',
 
     _add: function(a, b) {
         return a + b;
@@ -111,34 +112,35 @@ kiddsUtils.prototype = {
 	},
 
     getCharAttributes: function(input) {
-        var char = {};
+        var character = {};
         var roll;
 		if (input.thisAttrib == 'wisdom') {
 			if (input.thisAttribClass == 'Magic') {
 				//magic gets the mod
-				roll = kiddsUtils.rollDice(6,4,10);
+				roll = this.rollDice(6,4,10);
 			} else {
-				roll = kiddsUtils.rollDice(6,4);
+				roll = this.rollDice(6,4);
 			}
-			char.character_magic_roll = roll.sum;			
+			character.character_magic_roll = roll.sum;			
 		}
 		if (input.thisAttrib == 'strength') {
 			if (input.thisAttribClass == 'Fighter') {
-				roll = kiddsUtils.rollDice(6,4,10);
+				roll = this.rollDice(6,4,10);
 			} else {
-				roll = kiddsUtils.rollDice(6,4);
+				roll = this.rollDice(6,4);
 			}
-			char.character_fighter_roll = roll.sum;
+			character.character_fighter_roll = roll.sum;
 		}
 		if (input.thisAttrib == 'dexterity') {
 			if (input.thisAttribClass == 'Ranged') {
-				roll = kiddsUtils.rollDice(6,4,10);
+				roll = this.rollDice(6,4,10);
 			} else {
-				roll = kiddsUtils.rollDice(6,4);
+				roll = this.rollDice(6,4);
 			}
-			char.character_ranged_roll = roll.sum;
+			character.character_ranged_roll = roll.sum;
 		}
-		char.generateAttrib = false;
+		character.generateAttrib = false;
+		return character;
     },
 
     getCharImageSelectorList: function(charType) {
@@ -158,14 +160,55 @@ kiddsUtils.prototype = {
 			saGR.addEncodedQuery('table_sys_id=' + ciGR.sys_id + '^table_nameLIKEZZ_YYx_0478_kids_dungeo_character_image');
 			saGR.query();
 			if (saGR.next()) {
-				records.push(img = "/"+saGR.sys_id+".iix");
+				records.push({img:"/"+saGR.sys_id+".iix",selected:false,sys_id:saGR.getUniqueValue()});
 			}
         }
         return records;
 
     },
-
-
+	
+	setCharacter: function(character) {
+		/**
+		* set the character 
+		* @param: character | obj
+		*/
+	},
+	
+	getGuildsChoiceList: function() {
+		/**
+		* get a list of guilds
+		* @return records | array
+		*/
+		
+		var records = [];
+		
+		var gGR = new GlideRecord(this.TABLE_GUILDS);
+		gGR.addEncodedQuery('active=true'); //todo: based on user also
+		gGR.query();
+		while(gGR.next()) {
+			records.push({
+				value: gGR.getUniqueValue(),
+				label: gGR.getValue('name')
+			})
+		}
+		return records;
+		
+	},
+	
+	getGuild: function(id) {
+		/**
+		* get guild by sys_id
+		* @param: id | sys_id/string
+		* @return: guild | object
+		*/
+		var guild = {};
+		var gGR = new GlideRecord(this.TABLE_GUILDS);
+		if (gGR.get(id)) {
+			guild.sys_id = id;
+			guild.name = gGR.getValue('name');
+		}
+		return guild;
+	},
 
 
     type: 'kiddsUtils'
@@ -174,13 +217,13 @@ kiddsUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-02-27 21:22:31</sys_created_on>
         <sys_id>3b0c42b797b90110c8e1f8b3f153af5d</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>kiddsUtils</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sys_script_include_3b0c42b797b90110c8e1f8b3f153af5d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-02-27 23:12:27</sys_updated_on>
+        <sys_updated_on>2022-03-01 05:07:10</sys_updated_on>
     </sys_script_include>
 </record_update>

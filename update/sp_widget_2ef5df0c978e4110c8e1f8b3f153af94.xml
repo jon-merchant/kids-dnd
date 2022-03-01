@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($location, $window) {
+  /* widget controller */
+  var c = this;
+	c.data.guildSelected = null;
+	
+	c.selectedGuild = function(guild) {
+		console.log(guild);
+		c.data.guildSelected = guild;
+	}
+	c.setGuild = function(guild) {
+		$location.search('guildID', guild);
+	}
+	
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>kidds-guild</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Kidds Guild</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	
+	var kiddsUtils = new x_0478_kids_dungeo.kiddsUtils();
+	
+	data.guild = kiddsUtils.getGuild($sp.getParameter('guildID'));
+	
+	console.log("GUILD")
+	console.log(data.guild);
+	if (!data.guild) {
+		//let's look up and see if any are available
+		data.guildList = kiddsUtils.getGuildsChoiceList();
+	}
+	
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-02-28 21:23:51</sys_created_on>
+        <sys_id>2ef5df0c978e4110c8e1f8b3f153af94</sys_id>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_name>Kidds Guild</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_update_name>sp_widget_2ef5df0c978e4110c8e1f8b3f153af94</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-01 05:08:56</sys_updated_on>
+        <template><![CDATA[<div>
+  <!-- your widget template -->
+  <div ng-if="c.data.guildList">
+    <div class="row">
+      <div class="">
+        <label>Select Guild</label>
+      </div>
+      <sn-choice-list 
+                      field="c.guildChoice" 
+                      sn-model="c.guildChoice" 
+                      sn-options="" 
+                      sn-value-field="value" 
+                      sn-text-field="label"
+                      sn-on-change="c.selectedGuild(selectedValue)"
+                      sn-items="c.data.guildList">
+      </sn-choice-list>
+    </div>
+
+    <div class="row text-right padding-top-15">
+      <button class="btn btn-danger" ng-click="c.addGuild()">
+        Create
+      </button>
+      <button class="btn btn-info" ng-click="c.setGuild(c.data.guildSelected)" ng-disabled="!c.data.guildSelected">
+        Select
+      </button>
+    </div>
+  </div>
+  
+  
+  <div ng-if="c.data.guild">
+    <div class="row">
+      <h1>
+        <label>{{c.data.guild.name}}</label>
+      </h1>
+    </div>
+		<div class="row">
+      <div class="col-md-8">
+        
+      </div>
+      <div class="col-md-4">
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="row" ng-if="!c.data.guild && !c.data.guildList">
+    <div class="form-group">
+      <input type="text" ng-model="guild.name" class="form-control"/>
+    </div>
+    <div class="row text-right">
+      <button class="btn btn-info" ng-click="c.setGuild()">
+        Set Guild
+      </button>
+
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

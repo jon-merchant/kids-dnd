@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
-    <element extends="x_0478_kids_dungeo_dungeons_and_dragons" label="Character Card" max_length="40" name="x_0478_kids_dungeo_character_card" type="collection">
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="x_0478_kids_dungeo_dungeons_and_dragons" label="Character Card" max_length="40" name="x_0478_kids_dungeo_character_card" sizeclass="0" type="collection">
         <element label="Armors" max_length="4000" name="armors" reference="x_0478_kids_dungeo_character_items" reference_qual="item_type=Armor^EQ" reference_qual_condition="item_type=Armor^EQ" type="glide_list"/>
         <element label="Character Name" max_length="40" name="character_name" type="string"/>
         <element label="Character Class" max_length="32" name="character_type" reference="x_0478_kids_dungeo_character_type" type="reference"/>
         <element label="Dexterity" max_length="40" name="dexterity" type="integer"/>
+        <element label="Guild" max_length="32" name="guild" reference="x_0478_kids_dungeo_guild" type="reference"/>
         <element default="100" label="Health" max_length="40" name="health" type="integer"/>
         <element default="1" label="Level" max_length="40" name="level" type="integer"/>
         <element default="100" label="Level Points" max_length="40" name="level_points" type="integer"/>
@@ -15,6 +15,9 @@
         <element label="Weapons" max_length="4000" name="weapons" reference="x_0478_kids_dungeo_character_items" reference_qual="item_type=Weapon^EQ" reference_qual_condition="item_type=Weapon^EQ" type="glide_list"/>
         <element label="Wisdom" max_length="40" name="wisdom" type="integer"/>
         <index name="index">
+            <element name="guild"/>
+        </index>
+        <index name="index2">
             <element name="character_type"/>
         </index>
     </element>

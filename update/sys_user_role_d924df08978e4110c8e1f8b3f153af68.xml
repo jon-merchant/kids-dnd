@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_0478_kids_dungeo.guild_user</name>
+        <requires_subscription>-1</requires_subscription>
+        <scoped_admin>false</scoped_admin>
+        <suffix>guild_user</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-02-28 21:15:31</sys_created_on>
+        <sys_id>d924df08978e4110c8e1f8b3f153af68</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_0478_kids_dungeo.guild_user</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_update_name>sys_user_role_d924df08978e4110c8e1f8b3f153af68</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-02-28 21:15:31</sys_updated_on>
+    </sys_user_role>
+</record_update>
