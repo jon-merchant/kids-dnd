@@ -1,43 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css">
     <sp_css action="INSERT_OR_UPDATE">
-        <css>/*@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');*/&#13;
-@import url('https://fonts.googleapis.com/css?family=Metamorphous');&#13;
-&#13;
-label {&#13;
-  /*font-family: 'Press Start 2P', cursive;*/&#13;
-  font-family: 'Metamorphous', cursive;&#13;
-}&#13;
-&#13;
-.padding-top-15 {&#13;
-  padding-top: 15px;&#13;
-}&#13;
-&#13;
-&#13;
-.char-image-modal {&#13;
-  background-size: cover;&#13;
-  background-position: top center;&#13;
-  background-repeat: no-repeat;&#13;
-  height: 650px;&#13;
-  border-radius: 4px;&#13;
-}&#13;
-.char-image-modal-overlay {&#13;
-  background-color: rgba(0,0,0,0.25);&#13;
-  padding: 15px;&#13;
-  text-align:right;&#13;
-  width: 100%;&#13;
+        <css>/*@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');*/
+@import url('https://fonts.googleapis.com/css?family=Metamorphous');
+
+body, label, .label {
+  /*font-family: 'Press Start 2P', cursive;*/
+  font-family: 'Metamorphous', cursive;
+}
+
+.text-shadow {
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+.padding-lr-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.padding-top-15 {
+  padding-top: 15px;
+}
+.margin-left-15 {
+  margin-left: 15px;
+}
+.margin-right-15 {
+  margin-right: 15px;
+}
+.avatar {
+  vertical-align: middle;
+  border-radius: 50%;
+  background-size:cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.avatar-sm {
+  width: 50px;
+  height: 50px;
+  border: 1px solid $brand-danger;
+  
+}
+.avatar-md {
+  width: 75px;
+  height: 75px;
+}
+.avatar-lg {
+  width: 100px;
+  height: 100px;
+}
+.inline-block {
+  display: inline-block;
+}
+
+.char-image-modal {
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  height: 650px;
+  border-radius: 4px;
+}
+.char-image-modal-overlay {
+  background-color: rgba(0,0,0,0.25);
+  padding: 15px;
+  text-align:right;
+  width: 100%;
 }</css>
         <name>Kidds Global CSS</name>
         <sys_class_name>sp_css</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-30 19:01:56</sys_created_on>
         <sys_id>ff67d908db223200ef4856f0cf961974</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_name>Kidds Global CSS</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_css_ff67d908db223200ef4856f0cf961974</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-01 04:16:43</sys_updated_on>
+        <sys_updated_on>2022-03-06 23:31:19</sys_updated_on>
     </sp_css>
 </record_update>

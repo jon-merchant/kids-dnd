@@ -210,6 +210,72 @@ kiddsUtils.prototype = {
 		return guild;
 	},
 
+    getCharImage: function(id) {
+        /**
+        * get image from table
+        * @param: id | image sys_id
+        * @return: obj
+        */
+        var record = {};
+        
+        var imGR = new GlideRecord(this.TABLE_CHARACTER_IMAGE);
+        if (imGR.get(id)) {
+            var iix = imGR.getValue('character_image');
+            record.sys_id = imGR.getUniqueValue();
+            record.url = iix + ".iix";
+            record.className =  {
+                displayValue: imGR.getDisplayValue('character_class'),
+                value: imGR.getValue('character_class')
+            }
+        }
+        return record;
+    },
+
+    getGuildCharacters: function(id) {
+        /**
+        * Get Character associated to this guild
+        * @param: id : sys_id of the guild
+        * @return: records : array of record objects
+        */
+        var records = [];
+        var gcGR = new GlideRecord(this.TABLE_CHARACTER_CARD);
+        gcGR.addEncodedQuery('guild=' + id);
+        gcGR.query();
+        while(gcGR.next()) {
+            records.push({
+                name: gcGR.getValue('character_name'),
+                sys_id: gcGR.getUniqueValue(),
+                class: {
+                    value: gcGR.getValue('character_type'),
+                    displayValue: gcGR.getDisplayValue('character_type')
+                },
+                image: this.getCharImage(gcGR.getValue('image')),
+                nameClass: gcGR.getValue('character_name') + " | " + gcGR.getDisplayValue('character_type')
+            });
+        }
+        return records;
+    },
+
+    updateCharacterSingleField: function(field,value,sys_id) {
+        /**
+         * Update a charcter field value
+         * @param: field | string
+         * @param: value | mixed
+         * @param: sys_id | record id
+         * @return: string OR null;
+         */
+        console.log(field);
+        console.log(value);
+        console.log(sys_id);
+        var updGR = new GlideRecord(this.TABLE_CHARACTER_CARD);
+        if (updGR.get(sys_id)) {
+            updGR[field] = value;
+            var updated = updGR.update();
+            return updated;
+        }
+        return false;
+        
+    },
 
     type: 'kiddsUtils'
 };]]></script>
@@ -217,13 +283,13 @@ kiddsUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-02-27 21:22:31</sys_created_on>
         <sys_id>3b0c42b797b90110c8e1f8b3f153af5d</sys_id>
-        <sys_mod_count>30</sys_mod_count>
+        <sys_mod_count>47</sys_mod_count>
         <sys_name>kiddsUtils</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sys_script_include_3b0c42b797b90110c8e1f8b3f153af5d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-01 05:07:10</sys_updated_on>
+        <sys_updated_on>2022-03-08 00:19:32</sys_updated_on>
     </sys_script_include>
 </record_update>

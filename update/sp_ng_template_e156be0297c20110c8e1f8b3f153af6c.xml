@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_ng_template">
+    <sp_ng_template action="INSERT_OR_UPDATE">
+        <id>addGuildMembers</id>
+        <sp_widget display_value="Kidds Guild">2ef5df0c978e4110c8e1f8b3f153af94</sp_widget>
+        <sys_class_name>sp_ng_template</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-07 00:13:36</sys_created_on>
+        <sys_id>e156be0297c20110c8e1f8b3f153af6c</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>addGuildMembers</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_update_name>sp_ng_template_e156be0297c20110c8e1f8b3f153af6c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-07 23:47:41</sys_updated_on>
+        <template><![CDATA[<div class="panel">
+  <div class="panel-heading">
+      <h1 class="h3 text-danger text-shadow">
+        {{c.data.guild.name}} - Add Guild Members
+      </h1>
+      <span class="" ng-click="c.closeModal()"></span>
+  </div>
+  <div class="panel-body">
+      <p>Either create new member or select a member from a list.</p>
+      <div class="">
+        <sn-choice-list 
+                      field="c.guildChoice" 
+                      sn-model="c.guildChoice" 
+                      sn-options="" 
+                      sn-value-field="sys_id" 
+                      sn-text-field="nameClass"
+                      sn-on-change="c.selectedNonMembers(selectedValue)"
+                      sn-items="c.data.freeAgents">
+      </sn-choice-list>
+      </div>
+  </div>
+  <div class="panel-footer text-right">
+      <button class="btn btn-success" ng-if="c.selectedAddCharacter" ng-click="c.addMemberToGuild(c.data.guild, c.selectedAddCharacter)">Add</button>
+      <button class="btn btn-primary" ng-if="!c.selectedAddCharacter" ng-click="c.openPage()">Create</button>
+      <button class="btn btn-danger" ng-click="c.closeModal()">Cancel</button>
+  </div>
+</div>]]></template>
+    </sp_ng_template>
+</record_update>

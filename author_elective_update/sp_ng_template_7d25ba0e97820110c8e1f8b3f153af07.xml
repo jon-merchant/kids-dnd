@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_ng_template">
+    <sp_ng_template action="DELETE">
+        <id>addGuildMembers</id>
+        <sp_widget display_value="Kidds Guild">2ef5df0c978e4110c8e1f8b3f153af94</sp_widget>
+        <sys_class_name>sp_ng_template</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-07 00:08:44</sys_created_on>
+        <sys_id>7d25ba0e97820110c8e1f8b3f153af07</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>addGuildMembers</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_update_name>sp_ng_template_7d25ba0e97820110c8e1f8b3f153af07</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-07 00:11:47</sys_updated_on>
+        <template><![CDATA[<div class="panel">
+    <div class="panel-heading">
+        <h1 class="h3 text-danger text-shadow">Add Guild Members
+            <span ng-click="c.closeModal()"><i class="fa fa-times fa-2x" aria-hidden="true"></i></span>
+        </h1>
+        <span class="" ng-click="c.closeModal()"></span>
+    </div>
+    <div class="panel-body">
+        <p>Either create new member or select a member from a list.</p>
+      {{c}}
+    </div>
+    <div class="panel-footer text-right">
+        <button class="btn btn-primary">Create</button>
+        <button class="btn btn-success">Add</button>
+        <button class="btn btn-danger" ng-click="c.closeModal()">Cancel</button>
+    </div>
+</div>]]></template>
+    </sp_ng_template>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</application>
+        <file_path/>
+        <instance_id>af9c1707db554510e03ad7c8f496195e</instance_id>
+        <instance_name>dev123696</instance_name>
+        <name>sp_ng_template_7d25ba0e97820110c8e1f8b3f153af07</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_ng_template"&gt;&lt;sp_ng_template action="INSERT_OR_UPDATE"&gt;&lt;id&gt;addGuildMembers&lt;/id&gt;&lt;sp_widget display_value="Kidds Guild"&gt;2ef5df0c978e4110c8e1f8b3f153af94&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_ng_template&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-07 00:08:44&lt;/sys_created_on&gt;&lt;sys_id&gt;7d25ba0e97820110c8e1f8b3f153af07&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;addGuildMembers&lt;/sys_name&gt;&lt;sys_package display_value="Kids Dungeons &amp;amp; Dragons" source="x_0478_kids_dungeo"&gt;7901202f6f2a2200432530767b3ee440&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Kids Dungeons &amp;amp; Dragons"&gt;7901202f6f2a2200432530767b3ee440&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_ng_template_7d25ba0e97820110c8e1f8b3f153af07&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-07 00:11:47&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="panel"&gt;
+    &lt;div class="panel-heading"&gt;
+        &lt;h1 class="h3 text-danger text-shadow"&gt;Add Guild Members
+            &lt;span ng-click="c.closeModal()"&gt;&lt;i class="fa fa-times fa-2x" aria-hidden="true"&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;/h1&gt;
+        &lt;span class="" ng-click="c.closeModal()"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="panel-body"&gt;
+        &lt;p&gt;Either create new member or select a member from a list.&lt;/p&gt;
+      {{c}}
+    &lt;/div&gt;
+    &lt;div class="panel-footer text-right"&gt;
+        &lt;button class="btn btn-primary"&gt;Create&lt;/button&gt;
+        &lt;button class="btn btn-success"&gt;Add&lt;/button&gt;
+        &lt;button class="btn btn-danger" ng-click="c.closeModal()"&gt;Cancel&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_ng_template&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>422910221</payload_hash>
+        <record_name>addGuildMembers</record_name>
+        <reverted_from/>
+        <source>254aceff97790110c8e1f8b3f153affa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-07 00:11:47</sys_created_on>
+        <sys_id>f5063a0297c20110c8e1f8b3f153afb1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f61b7c4040000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-07 00:11:47</sys_updated_on>
+        <type>Angular ng-template</type>
+        <update_guid>fd063a0221c20110d7f462914b9966b0</update_guid>
+        <update_guid_history>fd063a0221c20110d7f462914b9966b0:422910221,b2d53a0226c20110fadcd23a5c5c9b7a:422508325,dd557ece888201108d0e2d4487972741:-1669854087</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="addGuildMembers">5b363e0297c20110c8e1f8b3f153af83</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-07 00:12:42</sys_created_on>
+        <sys_db_object display_value="" name="sp_ng_template">sp_ng_template</sys_db_object>
+        <sys_id>556b6497d15f4b729b674f51ffd742c4</sys_id>
+        <sys_metadata>7d25ba0e97820110c8e1f8b3f153af07</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>addGuildMembers</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_scope_delete display_value="">395013b4a52146098d0e3d47a1c15ca9</sys_scope_delete>
+        <sys_update_name>sp_ng_template_7d25ba0e97820110c8e1f8b3f153af07</sys_update_name>
+        <sys_update_version display_value="sp_ng_template_7d25ba0e97820110c8e1f8b3f153af07">f5063a0297c20110c8e1f8b3f153afb1</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-07 00:12:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

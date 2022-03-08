@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function($location, $window) {
+        <client_script><![CDATA[api.controller=function($scope, $location, spUtil, $uibModal, $window) {
   /* widget controller */
   var c = this;
 	c.data.guildSelected = null;
@@ -13,7 +13,54 @@
 	c.setGuild = function(guild) {
 		$location.search('guildID', guild);
 	}
+
+	c.addGuildMember = function() {
+		c.openModal('addGuildMembers');
+	}
+
 	
+	c.openModal = function (template) {
+		
+		c.modalInstance = $uibModal.open({
+			templateUrl: template,
+			scope: $scope
+		});
+	}
+
+	c.closeModal = function () {
+		c.modalInstance.close();
+	}
+	
+	c.openPage = function(page) {
+		var search = $location.search();
+		console.log(search);
+	}
+	c.selectedAddCharacter = "";
+	c.selectedNonMembers = function(character) {
+		if (character) {
+			c.selectedAddCharacter = character;
+		} else {
+			c.selectedAddCharacter = "";
+		}
+	}
+	c.addMemberToGuild = function(guild,character) {
+		console.log(guild,character);
+		c.server.get({
+			action:'addCharacterToGuild',
+			character: character,
+			actionValue: guild
+		}).then(function(response) {
+			console.log(response);
+			if (response && response.data) {
+				if (response.data.addCharacterToGuild) {
+					c.data.guildCharList = response.data.guildCharList;
+					c.closeModal();
+				}
+			}
+		})
+	}
+	
+
 	
 };]]></client_script>
         <controller_as>c</controller_as>
@@ -39,13 +86,42 @@
 	
 	var kiddsUtils = new x_0478_kids_dungeo.kiddsUtils();
 	
-	data.guild = kiddsUtils.getGuild($sp.getParameter('guildID'));
+	
+	if ($sp.getParameter('guildID')) {
+		data.guild = kiddsUtils.getGuild($sp.getParameter('guildID'));
+		data.guildCharList = kiddsUtils.getGuildCharacters($sp.getParameter('guildID'));
+		data.guildMaxLimit = gs.getProperty('x_0478_kids_dungeo.guild.max_limit');
+		if (data.guildCharList && data.guildCharList.length < data.guildMaxLimit) {
+			//show the add button
+			data.addGuildMembers = true;
+			//also need to grab a list of free agents 
+			data.freeAgents = kiddsUtils.getGuildCharacters("");
+			data.freeAgents.unshift({nameClass:'Create New',value:'createNew'});
+
+		}
+	}
+	
 	
 	console.log("GUILD")
 	console.log(data.guild);
 	if (!data.guild) {
 		//let's look up and see if any are available
 		data.guildList = kiddsUtils.getGuildsChoiceList();
+		console.log("GUILD List");
+		console.log(data.guildList);
+	}
+
+	if (input) {
+		if (input.action == 'addCharacterToGuild') {
+			var actg = kiddsUtils.updateCharacterSingleField('guild',input.actionValue.sys_id,input.character);
+			if (actg) {
+				data.guildCharList = kiddsUtils.getGuildCharacters($sp.getParameter('guildID'));
+				data.addCharacterToGuild = true;
+			} else {
+				data.addCharacterToGuild = false;
+			}
+
+		}
 	}
 	
 
@@ -55,14 +131,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-02-28 21:23:51</sys_created_on>
         <sys_id>2ef5df0c978e4110c8e1f8b3f153af94</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>102</sys_mod_count>
         <sys_name>Kidds Guild</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_widget_2ef5df0c978e4110c8e1f8b3f153af94</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-01 05:08:56</sys_updated_on>
+        <sys_updated_on>2022-03-08 00:24:19</sys_updated_on>
         <template><![CDATA[<div>
   <!-- your widget template -->
   <div ng-if="c.data.guildList">
@@ -99,10 +175,18 @@
       </h1>
     </div>
 		<div class="row">
-      <div class="col-md-8">
-        
+      <div class="col-md-8 col-sm-8">
+        <!-- Story Place-->
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-8">
+        <!-- GUILD PLAYER LIST -->
+        <h1 class="h3"><label>Guild Members</label> <span class="" ng-click="c.addGuildMember('addGuildMembers')"><i class="fas fa-plus-circle text-danger"></i></span></h1>
+        <div class="padding-lr-15">
+          <div class="" ng-repeat="character in c.data.guildCharList track by $index">
+            <div class="margin-right-15 inline-block avatar avatar-sm" style="background-image:url({{character.image.url}})"></div>
+            <div class="inline-block">{{character.name}}</div>
+          </div>
+        </div>
         
       </div>
     </div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
+        <sp_dependency display_value="FA5 Free">000fd64a97420110c8e1f8b3f153afe0</sp_dependency>
+        <sp_widget display_value="Kidds Guild">2ef5df0c978e4110c8e1f8b3f153af94</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-06 22:31:33</sys_created_on>
+        <sys_id>251f9ec697420110c8e1f8b3f153af6f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FA5 Free.Kidds Guild</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_251f9ec697420110c8e1f8b3f153af6f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-06 22:31:33</sys_updated_on>
+    </m2m_sp_widget_dependency>
+</record_update>

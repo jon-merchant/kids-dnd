@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_ng_template">
+    <sp_ng_template action="DELETE">
+        <id>addGuildMembers</id>
+        <sp_widget display_value="Kidds Guild">2ef5df0c978e4110c8e1f8b3f153af94</sp_widget>
+        <sys_class_name>sp_ng_template</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-06 23:15:56</sys_created_on>
+        <sys_id>d029e6c297820110c8e1f8b3f153afc2</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>addGuildMembers</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_update_name>sp_ng_template_d029e6c297820110c8e1f8b3f153afc2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-07 00:06:49</sys_updated_on>
+        <template><![CDATA[
+]]></template>
+    </sp_ng_template>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</application>
+        <file_path/>
+        <instance_id>af9c1707db554510e03ad7c8f496195e</instance_id>
+        <instance_name>dev123696</instance_name>
+        <name>sp_ng_template_d029e6c297820110c8e1f8b3f153afc2</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_ng_template"&gt;&lt;sp_ng_template action="INSERT_OR_UPDATE"&gt;&lt;id&gt;addGuildMembers&lt;/id&gt;&lt;sp_widget display_value="Kidds Guild"&gt;2ef5df0c978e4110c8e1f8b3f153af94&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_ng_template&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-06 23:15:56&lt;/sys_created_on&gt;&lt;sys_id&gt;d029e6c297820110c8e1f8b3f153afc2&lt;/sys_id&gt;&lt;sys_mod_count&gt;18&lt;/sys_mod_count&gt;&lt;sys_name&gt;addGuildMembers&lt;/sys_name&gt;&lt;sys_package display_value="Kids Dungeons &amp;amp; Dragons" source="x_0478_kids_dungeo"&gt;7901202f6f2a2200432530767b3ee440&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Kids Dungeons &amp;amp; Dragons"&gt;7901202f6f2a2200432530767b3ee440&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_ng_template_d029e6c297820110c8e1f8b3f153afc2&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-07 00:06:49&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[
+]]&gt;&lt;/template&gt;&lt;/sp_ng_template&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>904801227</payload_hash>
+        <record_name>addGuildMembers</record_name>
+        <reverted_from/>
+        <source>254aceff97790110c8e1f8b3f153affa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-07 00:06:49</sys_created_on>
+        <sys_id>89e476ce97820110c8e1f8b3f153afd0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f61b336930000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-07 00:06:49</sys_updated_on>
+        <type>Angular ng-template</type>
+        <update_guid>81e476ce9f820110c5942f1f917a56d0</update_guid>
+        <update_guid_history>81e476ce9f820110c5942f1f917a56d0:904801227,a3447a0e1f820110823fe73393c835ee:-781370427,fdb2b20e03820110dc97ea013db934ef:-1669854087,6ad1720e5c820110efda9b9626467cb6:-1344675580,7b91b20ea4820110a3a8f071b7e040e6:-68563468,48a07e8a11820110be5f5b13ecd9a901:45473825,7a10f20a8a82011028a9bcbe50433449:-294607770,d9adaec6f38201106af68fb385271111:353372206,b06de2c6ed82011010a2d626abffd3bb:775878569,651c22864d82011067f92a9da8e04881:1623657680,32ab228687820110baaade8bb440e538:786338928,8e9b228610820110eeb219ae774c8f2e:1623657680,494baa46da820110aec73fcc96a4dd09:786338928,c83baa46578201103cde48e56b6a8802:-1862816329,329aa20667820110e67e1458352a5c21:817847523,697a6a06628201107685f34e0025df2c:-1117239770,ab6aae065982011092065f38a57f3dd6:-1380449855,070a6a064a820110c29d46180e22470e:981400620,3739a6c2cf820110d8165269905cb489:329634998</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="addGuildMembers">93157ace97820110c8e1f8b3f153afc2</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-07 00:07:47</sys_created_on>
+        <sys_db_object display_value="" name="sp_ng_template">sp_ng_template</sys_db_object>
+        <sys_id>76dd67867ba74636affaeb3a746a20a4</sys_id>
+        <sys_metadata>d029e6c297820110c8e1f8b3f153afc2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>addGuildMembers</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_scope_delete display_value="">395013b4a52146098d0e3d47a1c15ca9</sys_scope_delete>
+        <sys_update_name>sp_ng_template_d029e6c297820110c8e1f8b3f153afc2</sys_update_name>
+        <sys_update_version display_value="sp_ng_template_d029e6c297820110c8e1f8b3f153afc2">89e476ce97820110c8e1f8b3f153afd0</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-07 00:07:47</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
