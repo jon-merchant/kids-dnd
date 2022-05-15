@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_ng_template">
+    <sp_ng_template action="INSERT_OR_UPDATE">
+        <id>guildMemberInfo</id>
+        <sp_widget display_value="Kidds Guild">2ef5df0c978e4110c8e1f8b3f153af94</sp_widget>
+        <sys_class_name>sp_ng_template</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-05-15 21:19:10</sys_created_on>
+        <sys_id>b4cda62097a7c510de6635dfe153af6c</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>guildMemberInfo</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_update_name>sp_ng_template_b4cda62097a7c510de6635dfe153af6c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-15 22:45:14</sys_updated_on>
+        <template><![CDATA[<div class="card-modal">
+  <div class="card-modal-image" style="background-image:url('{{modalData.character.image.url}}')">
+    <span ng-if="!modalData.character.image.url"><i class="fa-solid fa-dragon"></i></span>
+    <div class="card-modal-overlay">{{modalData.character.name}}</div>
+  </div>
+  <div class="card-modal-container clearfix">
+    <div class="col-sm-6">
+      <div class="font-strong text-primary">Class:</div>
+      <div class="small text-white">{{modalData.class.displayValue}}</div>
+    </div>
+    <div class="col-sm-6"></div>
+  </div>
+</div>]]></template>
+    </sp_ng_template>
+</record_update>

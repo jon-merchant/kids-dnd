@@ -9,11 +9,24 @@ body, label, .label {
 }
 
 .text-shadow {
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  text-shadow: $text-shadow;
 }
+.font-strong {
+  font-weight: bold;
+}
+.text-white {
+  color: #fff;
+}
+
 .padding-lr-15 {
   padding-left: 15px;
   padding-right: 15px;
+}
+.padding-top-4 {
+  padding-top:4px;
+}
+.padding-top-5 {
+  padding-top:5px;
 }
 .padding-top-15 {
   padding-top: 15px;
@@ -36,6 +49,10 @@ body, label, .label {
   width: 50px;
   height: 50px;
   border: 1px solid $brand-danger;
+  i {
+    font-size: 25px;
+    padding: 10px 8px;
+  }
   
 }
 .avatar-md {
@@ -62,19 +79,36 @@ body, label, .label {
   padding: 15px;
   text-align:right;
   width: 100%;
+}
+.card-modal {
+  .card-modal-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 200px;
+    i {
+      font-size: 100px;
+      padding: 18% 29%;
+    }
+  }
+  .card-modal-container {
+    border-top: 1px solid $primary;
+    padding: 15px;
+    @include background-opacity($primary, 0.35);
+  }
 }</css>
         <name>Kidds Global CSS</name>
         <sys_class_name>sp_css</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-30 19:01:56</sys_created_on>
         <sys_id>ff67d908db223200ef4856f0cf961974</sys_id>
-        <sys_mod_count>42</sys_mod_count>
+        <sys_mod_count>62</sys_mod_count>
         <sys_name>Kidds Global CSS</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_css_ff67d908db223200ef4856f0cf961974</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-06 23:31:19</sys_updated_on>
+        <sys_updated_on>2022-05-15 22:45:48</sys_updated_on>
     </sp_css>
 </record_update>

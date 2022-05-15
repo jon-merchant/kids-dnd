@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_ng_template">
+    <sp_ng_template action="INSERT_OR_UPDATE">
+        <id>guildMemberListInfo</id>
+        <sp_widget display_value="Kidds Guild">2ef5df0c978e4110c8e1f8b3f153af94</sp_widget>
+        <sys_class_name>sp_ng_template</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-05-15 21:36:22</sys_created_on>
+        <sys_id>e8b1b22097a7c510de6635dfe153af31</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>guildMemberListInfo</sys_name>
+        <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
+        <sys_update_name>sp_ng_template_e8b1b22097a7c510de6635dfe153af31</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-15 22:10:03</sys_updated_on>
+        <template><![CDATA[<div class="clearfix" ng-repeat="character in c.data.guildCharList track by $index">
+  <div class="col-sm-4">
+    <div ng-click="c.openModal('guildMemberInfo','sm',character)" ng-if="character.image.url" class="margin-right-15 inline-block avatar avatar-sm" style="background-image:url({{character.image.url}})"></div>
+    <div ng-click="c.openModal('guildMemberInfo','sm',character)" ng-if="!character.image.url" class="margin-right-15 inline-block avatar avatar-sm"><i class="fa-solid fa-dragon"></i></div>
+  </div>
+  
+  <div class="col-sm-8 padding-top-5 text-center">
+    <div ng-click="c.openModal('guildMemberInfo','sm',character)">{{character.name}}</div>
+    <div class="">
+      <span uib-tooltip="Strength: {{character.strength}}"><i class="fa-solid fa-dumbbell"></i></span> 
+      <span uib-tooltip="Dexterity: {{character.dexterity}}"><i class="fa-solid fa-person-walking"></i></span>
+      <span uib-tooltip="Wisdom: {{character.wisdom}}"><i class="fa-solid fa-brain"></i></span>
+      <span uib-tooltip="Health: {{character.health}}"><i class="fa-solid fa-heart-pulse"></i></span>
+      <span uib-tooltip="Mana: {{character.mana}}"><i class="fa-solid fa-prescription-bottle"></i></span>
+    </div>
+  </div>
+  
+</div>]]></template>
+    </sp_ng_template>
+</record_update>

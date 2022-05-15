@@ -19,11 +19,12 @@
 	}
 
 	
-	c.openModal = function (template) {
-		
+	c.openModal = function (template,size,data) {
+		$scope.modalData = data;
 		c.modalInstance = $uibModal.open({
 			templateUrl: template,
-			scope: $scope
+			scope: $scope,
+			size: size
 		});
 	}
 
@@ -58,6 +59,10 @@
 				}
 			}
 		})
+	}
+
+	c.addGuild = function() {
+		
 	}
 	
 
@@ -131,14 +136,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-02-28 21:23:51</sys_created_on>
         <sys_id>2ef5df0c978e4110c8e1f8b3f153af94</sys_id>
-        <sys_mod_count>102</sys_mod_count>
+        <sys_mod_count>110</sys_mod_count>
         <sys_name>Kidds Guild</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_widget_2ef5df0c978e4110c8e1f8b3f153af94</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-08 00:24:19</sys_updated_on>
+        <sys_updated_on>2022-05-15 22:12:38</sys_updated_on>
         <template><![CDATA[<div>
   <!-- your widget template -->
   <div ng-if="c.data.guildList">
@@ -182,9 +187,11 @@
         <!-- GUILD PLAYER LIST -->
         <h1 class="h3"><label>Guild Members</label> <span class="" ng-click="c.addGuildMember('addGuildMembers')"><i class="fas fa-plus-circle text-danger"></i></span></h1>
         <div class="padding-lr-15">
-          <div class="" ng-repeat="character in c.data.guildCharList track by $index">
-            <div class="margin-right-15 inline-block avatar avatar-sm" style="background-image:url({{character.image.url}})"></div>
-            <div class="inline-block">{{character.name}}</div>
+          <ng-include src="'guildMemberListInfo'"></ng-include>
+          <!--<div class="" ng-repeat="character in c.data.guildCharList track by $index">
+            <div ng-if="character.image.url" class="margin-right-15 inline-block avatar avatar-sm" style="background-image:url({{character.image.url}})"></div>
+            <div ng-if="!character.image.url" class="margin-right-15 inline-block avatar avatar-sm"><i class="fa-solid fa-dragon"></i></div>
+            <div class="inline-block">{{character.name}}</div>-->
           </div>
         </div>
         

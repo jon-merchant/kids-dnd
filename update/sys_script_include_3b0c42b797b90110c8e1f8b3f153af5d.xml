@@ -250,7 +250,12 @@ kiddsUtils.prototype = {
                     displayValue: gcGR.getDisplayValue('character_type')
                 },
                 image: this.getCharImage(gcGR.getValue('image')),
-                nameClass: gcGR.getValue('character_name') + " | " + gcGR.getDisplayValue('character_type')
+                nameClass: gcGR.getValue('character_name') + " | " + gcGR.getDisplayValue('character_type'),
+                strength: gcGR.getValue('strength'),
+                dexterity: gcGR.getValue('dexterity'),
+                wisdom: gcGR.getValue('wisdom'),
+                health: gcGR.getValue('health'),
+                mana: gcGR.getValue('mana')
             });
         }
         return records;
@@ -283,13 +288,13 @@ kiddsUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-02-27 21:22:31</sys_created_on>
         <sys_id>3b0c42b797b90110c8e1f8b3f153af5d</sys_id>
-        <sys_mod_count>47</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_name>kiddsUtils</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sys_script_include_3b0c42b797b90110c8e1f8b3f153af5d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-08 00:19:32</sys_updated_on>
+        <sys_updated_on>2022-05-15 21:49:02</sys_updated_on>
     </sys_script_include>
 </record_update>
