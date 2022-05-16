@@ -3,7 +3,9 @@
         <css>/*@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');*/
 @import url('https://fonts.googleapis.com/css?family=Metamorphous');
 
-body, label, .label {
+body,
+label,
+.label {
   /*font-family: 'Press Start 2P', cursive;*/
   font-family: 'Metamorphous', cursive;
 }
@@ -11,58 +13,79 @@ body, label, .label {
 .text-shadow {
   text-shadow: $text-shadow;
 }
+
 .font-strong {
   font-weight: bold;
 }
+
 .text-white {
   color: #fff;
+}
+
+.padding-15 {
+  padding: 15px;
 }
 
 .padding-lr-15 {
   padding-left: 15px;
   padding-right: 15px;
 }
+
 .padding-top-4 {
-  padding-top:4px;
+  padding-top: 4px;
 }
+
 .padding-top-5 {
-  padding-top:5px;
+  padding-top: 5px;
 }
+
 .padding-top-15 {
   padding-top: 15px;
 }
+
 .margin-left-15 {
   margin-left: 15px;
 }
+
 .margin-right-15 {
   margin-right: 15px;
 }
+
+.border-left-primary {
+  border-left: 1px solid $primary;
+}
+
 .avatar {
   vertical-align: middle;
   border-radius: 50%;
-  background-size:cover;
+  background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
+
 .avatar-sm {
   width: 50px;
   height: 50px;
   border: 1px solid $brand-danger;
+
   i {
     font-size: 25px;
     padding: 10px 8px;
   }
-  
+
 }
+
 .avatar-md {
   width: 75px;
   height: 75px;
 }
+
 .avatar-lg {
   width: 100px;
   height: 100px;
 }
+
 .inline-block {
   display: inline-block;
 }
@@ -74,26 +97,58 @@ body, label, .label {
   height: 650px;
   border-radius: 4px;
 }
+
 .char-image-modal-overlay {
-  background-color: rgba(0,0,0,0.25);
+  background-color: rgba(0, 0, 0, 0.25);
   padding: 15px;
-  text-align:right;
+  text-align: right;
   width: 100%;
 }
+
 .card-modal {
+  position: relative;
+
+  .card-modal-close-overlay {
+    position: absolute;
+    right: -8px;
+    font-size: 32px;
+    top: -10px;
+    z-index: 100;
+    background-color: #fff;
+    border-radius: 50%;
+    height: 31px;
+    width: 31px;
+    line-height: 3.2rem;
+
+  }
+
   .card-modal-image {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     height: 200px;
+    position: relative;
+
     i {
       font-size: 100px;
       padding: 18% 29%;
     }
+
+    .card-modal-overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 8px;
+      text-align: center;
+      text-shadow: $text-shadow;
+      color: #fff;
+      @include background-opacity($danger, 0.35);
+    }
   }
+
   .card-modal-container {
     border-top: 1px solid $primary;
-    padding: 15px;
+    /*padding: 15px;*/
     @include background-opacity($primary, 0.35);
   }
 }</css>
@@ -102,13 +157,13 @@ body, label, .label {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-04-30 19:01:56</sys_created_on>
         <sys_id>ff67d908db223200ef4856f0cf961974</sys_id>
-        <sys_mod_count>62</sys_mod_count>
+        <sys_mod_count>75</sys_mod_count>
         <sys_name>Kidds Global CSS</sys_name>
         <sys_package display_value="Kids Dungeons &amp; Dragons" source="x_0478_kids_dungeo">7901202f6f2a2200432530767b3ee440</sys_package>
         <sys_policy/>
         <sys_scope display_value="Kids Dungeons &amp; Dragons">7901202f6f2a2200432530767b3ee440</sys_scope>
         <sys_update_name>sp_css_ff67d908db223200ef4856f0cf961974</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-05-15 22:45:48</sys_updated_on>
+        <sys_updated_on>2022-05-16 19:01:39</sys_updated_on>
     </sp_css>
 </record_update>
